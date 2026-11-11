@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#4f46e5">
+<title>边打字边背单词 · 四六级冲刺</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="countdown" id="countdown">
+      <span class="cd-label">距离四六级</span>
+      <span class="days-wrap"><span class="days" id="days">--</span></span>
+      <span class="cd-label">天</span>
+      <span class="cd-sub" id="examDate">笔试 12月12日</span>
+    </div>
+    <button class="book-btn" id="bookBtn" aria-label="错词本">
+      <span class="book-ico">📕</span><span class="book-txt">错词本</span>
+      <span class="badge" id="badge">0</span>
+    </button>
+  </header>
+
+  <div class="stats">
+    <span>今日已背 <b id="today">0</b> 个</span>
+    <span class="dot">·</span>
+    <span id="progWrap">进度 <b id="prog">1</b>/<span id="total">200</span></span>
+    <button class="mute" id="muteBtn" aria-label="声音开关">🔊</button>
+  </div>
+
+  <nav class="tabs">
+    <button class="tab active" data-view="learn" id="tabLearn">背单词</button>
+    <button class="tab" data-view="book" id="tabBook">错词复习 <span class="tab-n" id="tabN">0</span></button>
+  </nav>
+
+  <!-- 背单词 / 复习 共用的答题区 -->
+  <main class="view" id="viewLearn">
+    <div class="mode" id="modeTag">看中文，打英文 · 回车确认</div>
+    <div class="card" id="card">
+      <div class="pos" id="pos">v.</div>
+      <div class="meaning" id="meaning">…</div>
+      <div class="hint" id="hint">共 7 个字母</div>
+      <form id="form" autocomplete="off">
+        <input id="ans" class="ans" type="text" inputmode="latin" enterkeyhint="done"
+               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+               placeholder="在这里打英文" aria-label="输入英文单词">
+      </form>
+      <div class="feedback" id="fb" aria-live="polite"></div>
+    </div>
+    <div class="actions">
+      <button class="btn ghost" id="skipBtn" type="button">跳过</button>
+      <button class="btn primary" id="okBtn" type="button">确认 ⏎</button>
+    </div>
+    <p class="tip" id="tip">同一个词拼错 2 次，会自动进错词本</p>
+  </main>
+
+  <!-- 错词本 -->
+  <section class="view" id="viewBook" hidden>
+    <div class="book-head">
+      <div>
+        <h2>错词本</h2>
+        <p class="muted">存在本机浏览器里，刷新、关掉网页都还在</p>
+      </div>
+      <button class="btn primary" id="reviewBtn" type="button">一键复习</button>
+    </div>
+    <ul class="book-list" id="bookList"></ul>
+    <p class="empty" id="bookEmpty">还没有错词。同一个词拼错 2 次会自动进来。</p>
+  </section>
+
+  <div class="toast" id="toast"></div>
+  <footer class="foot">数据只存在你自己的浏览器（localStorage），不上传、不用登录</footer>
+</div>
+<script src="words.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
