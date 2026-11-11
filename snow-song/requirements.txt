@@ -1,0 +1,5 @@
+numpy>=1.24
+scipy>=1.10
+Pillow>=10.0
+soundfile>=0.12
+# 另需系统里装好 ffmpeg（读写音频、合成视频）

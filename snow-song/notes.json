@@ -1,0 +1,878 @@
+{
+  "title": "D4 代码歌",
+  "account": "AI造点真东西",
+  "license": "自有作品，由本脚本纯合成，可商用，不强制署名。未使用采样或第三方音色库。",
+  "key": "A minor",
+  "mode": "natural minor (Aeolian); 暴雪和弦带少量 F/G 外音",
+  "bpm": 60.0,
+  "time_signature": "4/4",
+  "beat_duration_sec": 1.0,
+  "duration_sec": 52.0,
+  "sample_rate": 48000,
+  "target_lufs": -16.0,
+  "loudness_versions": [
+    -16.0,
+    -14.0,
+    -13.0
+  ],
+  "true_peak_limit_dbtp": -1.0,
+  "envelope": {
+    "piano_attack_sec": 0.012,
+    "piano_release_sec": 1.15,
+    "piano_decay_base": 2.15,
+    "pad": "disabled; 脚本第九节要求单音钢琴感、不要煽情铺底"
+  },
+  "reverb": {
+    "rt60_sec": 2.6,
+    "predelay_sec": 0.028,
+    "mix": 0.32,
+    "damp_hz": 5200
+  },
+  "visualization": {
+    "first_snowflake_time_sec": 0.0,
+    "first_snowflake_pitch": "A2",
+    "snow_amount": "由低频能量 / 低音与和弦力度驱动",
+    "sparkle": "由高频能量驱动；刻意高音在 9.60s 的 C5",
+    "blizzard_time_sec": 23.0,
+    "music_cut": [
+      24.8,
+      25.3
+    ],
+    "last_note_time_sec": 36.0,
+    "ending_note_time_sec": 46.0
+  },
+  "markers": [
+    {
+      "time": 0.0,
+      "name": "first_snowflake",
+      "detail": "第 0 帧：低音 A2 落下，第一片雪落下，频谱带亮起"
+    },
+    {
+      "time": 9.6,
+      "name": "sparkle_high_note",
+      "detail": "高音 C5，给第 3 镜“雪花闪一下”"
+    },
+    {
+      "time": 23.0,
+      "name": "blizzard_chord",
+      "detail": "过满的 Am 堆叠和弦，驱动满屏暴雪"
+    },
+    {
+      "time": 24.8,
+      "name": "music_cut_start",
+      "detail": "音乐硬切开始，持续 0.5 秒"
+    },
+    {
+      "time": 25.3,
+      "name": "music_cut_end",
+      "detail": "0.5 秒静音结束"
+    },
+    {
+      "time": 27.0,
+      "name": "music_return",
+      "detail": "回到 Am，开始渐慢渐弱"
+    },
+    {
+      "time": 36.0,
+      "name": "last_note",
+      "detail": "最后一个音 A2，之后混响自然衰减，雪停、定格"
+    },
+    {
+      "time": 41.5,
+      "name": "soft_high_E",
+      "detail": "极轻高音 E5，给机器人抬头；若配音点改了，改 start 后重跑"
+    },
+    {
+      "time": 46.0,
+      "name": "ending_A",
+      "detail": "收尾再弹一次开头的 A2，约 51 秒前应已静音"
+    }
+  ],
+  "chords": [
+    {
+      "start": 0.0,
+      "duration": 3.0,
+      "name": "Am",
+      "roman": "i",
+      "section": "shot1_hook"
+    },
+    {
+      "start": 3.0,
+      "duration": 5.0,
+      "name": "F",
+      "roman": "VI",
+      "section": "shot2"
+    },
+    {
+      "start": 8.0,
+      "duration": 4.0,
+      "name": "C",
+      "roman": "III",
+      "section": "shot3_sparkle"
+    },
+    {
+      "start": 12.0,
+      "duration": 3.0,
+      "name": "G",
+      "roman": "VII",
+      "section": "shot4"
+    },
+    {
+      "start": 15.0,
+      "duration": 4.0,
+      "name": "Am",
+      "roman": "i",
+      "section": "shot5_process"
+    },
+    {
+      "start": 19.0,
+      "duration": 4.0,
+      "name": "F",
+      "roman": "VI",
+      "section": "shot6_process"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.8,
+      "name": "Am",
+      "roman": "i",
+      "section": "shot7_blizzard"
+    },
+    {
+      "start": 25.3,
+      "duration": 1.7,
+      "name": "Am",
+      "roman": "i",
+      "section": "shot7_after_cut"
+    },
+    {
+      "start": 27.0,
+      "duration": 9.0,
+      "name": "Am",
+      "roman": "i",
+      "section": "shot8_ritard"
+    },
+    {
+      "start": 36.0,
+      "duration": 10.0,
+      "name": "Am",
+      "roman": "i",
+      "section": "shot9_last"
+    },
+    {
+      "start": 46.0,
+      "duration": 6.0,
+      "name": "Am",
+      "roman": "i",
+      "section": "shot10_ending"
+    }
+  ],
+  "notes": [
+    {
+      "start": 0.0,
+      "duration": 2.4,
+      "pitch": "A2",
+      "midi": 45,
+      "freq": 110.0,
+      "velocity": 0.58,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": "第一片雪；低音 A，长混响"
+    },
+    {
+      "start": 2.0,
+      "duration": 1.0,
+      "pitch": "E3",
+      "midi": 52,
+      "freq": 164.8138,
+      "velocity": 0.36,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": ""
+    },
+    {
+      "start": 3.0,
+      "duration": 1.5,
+      "pitch": "A3",
+      "midi": 57,
+      "freq": 220.0,
+      "velocity": 0.48,
+      "voice": "melody",
+      "chord": "F",
+      "comment": ""
+    },
+    {
+      "start": 4.5,
+      "duration": 0.5,
+      "pitch": "G3",
+      "midi": 55,
+      "freq": 195.9977,
+      "velocity": 0.42,
+      "voice": "melody",
+      "chord": "F",
+      "comment": ""
+    },
+    {
+      "start": 5.0,
+      "duration": 1.5,
+      "pitch": "F3",
+      "midi": 53,
+      "freq": 174.6141,
+      "velocity": 0.46,
+      "voice": "melody",
+      "chord": "F",
+      "comment": ""
+    },
+    {
+      "start": 6.5,
+      "duration": 0.5,
+      "pitch": "E3",
+      "midi": 52,
+      "freq": 164.8138,
+      "velocity": 0.4,
+      "voice": "melody",
+      "chord": "F",
+      "comment": ""
+    },
+    {
+      "start": 7.0,
+      "duration": 1.0,
+      "pitch": "C4",
+      "midi": 60,
+      "freq": 261.6256,
+      "velocity": 0.44,
+      "voice": "melody",
+      "chord": "F",
+      "comment": "导入 C 和弦"
+    },
+    {
+      "start": 3.0,
+      "duration": 4.0,
+      "pitch": "F2",
+      "midi": 41,
+      "freq": 87.3071,
+      "velocity": 0.34,
+      "voice": "bass",
+      "chord": "F",
+      "comment": ""
+    },
+    {
+      "start": 3.05,
+      "duration": 4.8,
+      "pitch": "C3",
+      "midi": 48,
+      "freq": 130.8128,
+      "velocity": 0.28,
+      "voice": "harmony",
+      "chord": "F",
+      "comment": ""
+    },
+    {
+      "start": 3.05,
+      "duration": 4.8,
+      "pitch": "F3",
+      "midi": 53,
+      "freq": 174.6141,
+      "velocity": 0.28,
+      "voice": "harmony",
+      "chord": "F",
+      "comment": ""
+    },
+    {
+      "start": 3.05,
+      "duration": 4.8,
+      "pitch": "A3",
+      "midi": 57,
+      "freq": 220.0,
+      "velocity": 0.28,
+      "voice": "harmony",
+      "chord": "F",
+      "comment": ""
+    },
+    {
+      "start": 8.0,
+      "duration": 1.0,
+      "pitch": "E4",
+      "midi": 64,
+      "freq": 329.6276,
+      "velocity": 0.5,
+      "voice": "melody",
+      "chord": "C",
+      "comment": ""
+    },
+    {
+      "start": 9.0,
+      "duration": 0.6,
+      "pitch": "G4",
+      "midi": 67,
+      "freq": 391.9954,
+      "velocity": 0.48,
+      "voice": "melody",
+      "chord": "C",
+      "comment": ""
+    },
+    {
+      "start": 9.6,
+      "duration": 1.0,
+      "pitch": "C5",
+      "midi": 72,
+      "freq": 523.2511,
+      "velocity": 0.62,
+      "voice": "melody",
+      "chord": "C",
+      "comment": "雪花闪光高音"
+    },
+    {
+      "start": 10.6,
+      "duration": 0.5,
+      "pitch": "G4",
+      "midi": 67,
+      "freq": 391.9954,
+      "velocity": 0.42,
+      "voice": "melody",
+      "chord": "C",
+      "comment": ""
+    },
+    {
+      "start": 11.1,
+      "duration": 0.9,
+      "pitch": "E4",
+      "midi": 64,
+      "freq": 329.6276,
+      "velocity": 0.4,
+      "voice": "melody",
+      "chord": "C",
+      "comment": ""
+    },
+    {
+      "start": 8.0,
+      "duration": 4.0,
+      "pitch": "C3",
+      "midi": 48,
+      "freq": 130.8128,
+      "velocity": 0.34,
+      "voice": "bass",
+      "chord": "C",
+      "comment": ""
+    },
+    {
+      "start": 8.05,
+      "duration": 3.8,
+      "pitch": "G3",
+      "midi": 55,
+      "freq": 195.9977,
+      "velocity": 0.28,
+      "voice": "harmony",
+      "chord": "C",
+      "comment": ""
+    },
+    {
+      "start": 8.05,
+      "duration": 3.8,
+      "pitch": "C4",
+      "midi": 60,
+      "freq": 261.6256,
+      "velocity": 0.28,
+      "voice": "harmony",
+      "chord": "C",
+      "comment": ""
+    },
+    {
+      "start": 8.05,
+      "duration": 3.8,
+      "pitch": "E4",
+      "midi": 64,
+      "freq": 329.6276,
+      "velocity": 0.28,
+      "voice": "harmony",
+      "chord": "C",
+      "comment": ""
+    },
+    {
+      "start": 12.0,
+      "duration": 1.5,
+      "pitch": "D4",
+      "midi": 62,
+      "freq": 293.6648,
+      "velocity": 0.46,
+      "voice": "melody",
+      "chord": "G",
+      "comment": ""
+    },
+    {
+      "start": 13.5,
+      "duration": 0.5,
+      "pitch": "B3",
+      "midi": 59,
+      "freq": 246.9417,
+      "velocity": 0.4,
+      "voice": "melody",
+      "chord": "G",
+      "comment": ""
+    },
+    {
+      "start": 14.0,
+      "duration": 1.0,
+      "pitch": "G3",
+      "midi": 55,
+      "freq": 195.9977,
+      "velocity": 0.38,
+      "voice": "melody",
+      "chord": "G",
+      "comment": ""
+    },
+    {
+      "start": 12.0,
+      "duration": 3.0,
+      "pitch": "G2",
+      "midi": 43,
+      "freq": 97.9989,
+      "velocity": 0.32,
+      "voice": "bass",
+      "chord": "G",
+      "comment": ""
+    },
+    {
+      "start": 12.05,
+      "duration": 2.8,
+      "pitch": "D3",
+      "midi": 50,
+      "freq": 146.8324,
+      "velocity": 0.26,
+      "voice": "harmony",
+      "chord": "G",
+      "comment": ""
+    },
+    {
+      "start": 12.05,
+      "duration": 2.8,
+      "pitch": "G3",
+      "midi": 55,
+      "freq": 195.9977,
+      "velocity": 0.26,
+      "voice": "harmony",
+      "chord": "G",
+      "comment": ""
+    },
+    {
+      "start": 12.05,
+      "duration": 2.8,
+      "pitch": "B3",
+      "midi": 59,
+      "freq": 246.9417,
+      "velocity": 0.26,
+      "voice": "harmony",
+      "chord": "G",
+      "comment": ""
+    },
+    {
+      "start": 15.0,
+      "duration": 2.0,
+      "pitch": "A3",
+      "midi": 57,
+      "freq": 220.0,
+      "velocity": 0.34,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": "过程段，弱"
+    },
+    {
+      "start": 17.0,
+      "duration": 1.0,
+      "pitch": "C4",
+      "midi": 60,
+      "freq": 261.6256,
+      "velocity": 0.32,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": ""
+    },
+    {
+      "start": 18.0,
+      "duration": 1.0,
+      "pitch": "B3",
+      "midi": 59,
+      "freq": 246.9417,
+      "velocity": 0.3,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": ""
+    },
+    {
+      "start": 15.0,
+      "duration": 4.0,
+      "pitch": "A2",
+      "midi": 45,
+      "freq": 110.0,
+      "velocity": 0.26,
+      "voice": "bass",
+      "chord": "Am",
+      "comment": ""
+    },
+    {
+      "start": 19.0,
+      "duration": 2.0,
+      "pitch": "A3",
+      "midi": 57,
+      "freq": 220.0,
+      "velocity": 0.32,
+      "voice": "melody",
+      "chord": "F",
+      "comment": ""
+    },
+    {
+      "start": 21.0,
+      "duration": 2.0,
+      "pitch": "E3",
+      "midi": 52,
+      "freq": 164.8138,
+      "velocity": 0.28,
+      "voice": "melody",
+      "chord": "F",
+      "comment": "导入暴雪前的回落"
+    },
+    {
+      "start": 19.0,
+      "duration": 4.0,
+      "pitch": "F2",
+      "midi": 41,
+      "freq": 87.3071,
+      "velocity": 0.24,
+      "voice": "bass",
+      "chord": "F",
+      "comment": ""
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "A1",
+      "midi": 33,
+      "freq": 55.0,
+      "velocity": 0.7,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "A2",
+      "midi": 45,
+      "freq": 110.0,
+      "velocity": 0.78,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "E3",
+      "midi": 52,
+      "freq": 164.8138,
+      "velocity": 0.66,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "F3",
+      "midi": 53,
+      "freq": 174.6141,
+      "velocity": 0.4,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "A3",
+      "midi": 57,
+      "freq": 220.0,
+      "velocity": 0.72,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "C4",
+      "midi": 60,
+      "freq": 261.6256,
+      "velocity": 0.7,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "E4",
+      "midi": 64,
+      "freq": 329.6276,
+      "velocity": 0.68,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "G4",
+      "midi": 67,
+      "freq": 391.9954,
+      "velocity": 0.45,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "A4",
+      "midi": 69,
+      "freq": 440.0,
+      "velocity": 0.64,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "C5",
+      "midi": 72,
+      "freq": 523.2511,
+      "velocity": 0.6,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 23.0,
+      "duration": 1.7,
+      "pitch": "E5",
+      "midi": 76,
+      "freq": 659.2551,
+      "velocity": 0.55,
+      "voice": "FX",
+      "chord": "Am",
+      "comment": "暴雪和弦：音过多、过满"
+    },
+    {
+      "start": 27.0,
+      "duration": 2.2,
+      "pitch": "A3",
+      "midi": 57,
+      "freq": 220.0,
+      "velocity": 0.38,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": "恢复，开始渐慢"
+    },
+    {
+      "start": 29.3,
+      "duration": 2.0,
+      "pitch": "F3",
+      "midi": 53,
+      "freq": 174.6141,
+      "velocity": 0.34,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": "时值拉长"
+    },
+    {
+      "start": 31.5,
+      "duration": 2.1,
+      "pitch": "E3",
+      "midi": 52,
+      "freq": 164.8138,
+      "velocity": 0.3,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": ""
+    },
+    {
+      "start": 33.7,
+      "duration": 2.1,
+      "pitch": "C3",
+      "midi": 48,
+      "freq": 130.8128,
+      "velocity": 0.26,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": ""
+    },
+    {
+      "start": 27.0,
+      "duration": 4.0,
+      "pitch": "A2",
+      "midi": 45,
+      "freq": 110.0,
+      "velocity": 0.26,
+      "voice": "bass",
+      "chord": "Am",
+      "comment": ""
+    },
+    {
+      "start": 31.5,
+      "duration": 4.4,
+      "pitch": "A2",
+      "midi": 45,
+      "freq": 110.0,
+      "velocity": 0.2,
+      "voice": "bass",
+      "chord": "Am",
+      "comment": ""
+    },
+    {
+      "start": 36.0,
+      "duration": 3.2,
+      "pitch": "A2",
+      "midi": 45,
+      "freq": 110.0,
+      "velocity": 0.4,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": "最后一个音，与开头同音"
+    },
+    {
+      "start": 41.5,
+      "duration": 1.2,
+      "pitch": "E5",
+      "midi": 76,
+      "freq": 659.2551,
+      "velocity": 0.12,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": "机器人抬头时的极轻高音 E，可按配音点微调"
+    },
+    {
+      "start": 46.0,
+      "duration": 3.0,
+      "pitch": "A2",
+      "midi": 45,
+      "freq": 110.0,
+      "velocity": 0.28,
+      "voice": "melody",
+      "chord": "Am",
+      "comment": "收尾：再轻轻弹一次开头的音"
+    }
+  ],
+  "verify": {
+    "versions": {
+      "-16.0": {
+        "wav": "D4_代码歌_demo.wav",
+        "mp3": "D4_代码歌_demo.mp3",
+        "ffprobe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "pcm_s24le",
+              "sample_rate": "48000",
+              "channels": 2,
+              "bits_per_raw_sample": "24"
+            }
+          ],
+          "format": {
+            "duration": "52.000000"
+          }
+        },
+        "loudness": {
+          "integrated_lufs": -16.0,
+          "lra": 13.2,
+          "true_peak_dbtp": -5.6,
+          "true_peak_oversampled": -5.55819044550643,
+          "target_lufs": -16.0
+        },
+        "sample_peak": 0.5248070442449673,
+        "clip_samples": 0
+      },
+      "-14.0": {
+        "wav": "D4_代码歌_-14LUFS.wav",
+        "mp3": null,
+        "ffprobe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "pcm_s24le",
+              "sample_rate": "48000",
+              "channels": 2,
+              "bits_per_raw_sample": "24"
+            }
+          ],
+          "format": {
+            "duration": "52.000000"
+          }
+        },
+        "loudness": {
+          "integrated_lufs": -14.0,
+          "lra": 13.2,
+          "true_peak_dbtp": -3.6,
+          "true_peak_oversampled": -3.55819044550643,
+          "target_lufs": -14.0
+        },
+        "sample_peak": 0.6606929242885752,
+        "clip_samples": 0
+      },
+      "-13.0": {
+        "wav": "D4_代码歌_-13LUFS.wav",
+        "mp3": null,
+        "ffprobe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "pcm_s24le",
+              "sample_rate": "48000",
+              "channels": 2,
+              "bits_per_raw_sample": "24"
+            }
+          ],
+          "format": {
+            "duration": "52.000000"
+          }
+        },
+        "loudness": {
+          "integrated_lufs": -13.0,
+          "lra": 13.2,
+          "true_peak_dbtp": -2.6,
+          "true_peak_oversampled": -2.5581904455064315,
+          "target_lufs": -13.0
+        },
+        "sample_peak": 0.7413096536785112,
+        "clip_samples": 0
+      }
+    },
+    "wav": "D4_代码歌_demo.wav",
+    "mp3": "D4_代码歌_demo.mp3",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s24le",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bits_per_raw_sample": "24"
+        }
+      ],
+      "format": {
+        "duration": "52.000000"
+      }
+    },
+    "loudness": {
+      "integrated_lufs": -16.0,
+      "lra": 13.2,
+      "true_peak_dbtp": -5.6,
+      "true_peak_oversampled": -5.55819044550643,
+      "target_lufs": -16.0
+    }
+  }
+}
