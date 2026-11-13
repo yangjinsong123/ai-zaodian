@@ -1,0 +1,4235 @@
+{
+ "title": "D4 配乐 v2 · B2 版（B 版 + 演奏人性化）",
+ "account": "AI造点真东西",
+ "version": "B2",
+ "license": "自有作品（代码作曲、代码编曲）。渲染音色：Salamander Grand Piano V3（CC BY 3.0，需署名）+ GeneralUser GS v2.0.3（可商用，无强制署名）。详见 授权说明.txt",
+ "key": "A minor（A 自然小调；B 版尾段与过门用和声小调属和弦 E）",
+ "bpm": 60.0,
+ "time_signature": "4/4",
+ "duration_sec": 52.467,
+ "sample_rate": 48000,
+ "bit_depth": 24,
+ "target_lufs": -14.0,
+ "true_peak_limit_dbtp": -1.0,
+ "markers": [
+  {
+   "time": 0.0,
+   "name": "first_snowflake"
+  },
+  {
+   "time": 9.6,
+   "name": "sparkle_high_note"
+  },
+  {
+   "time": 23.0,
+   "name": "blizzard_chord"
+  },
+  {
+   "time": 24.8,
+   "name": "music_cut_start"
+  },
+  {
+   "time": 25.3,
+   "name": "music_cut_end"
+  },
+  {
+   "time": 27.0,
+   "name": "music_return"
+  },
+  {
+   "time": 36.0,
+   "name": "last_note"
+  },
+  {
+   "time": 41.5,
+   "name": "soft_high_E"
+  },
+  {
+   "time": 46.0,
+   "name": "ending_A"
+  }
+ ],
+ "silence_windows": [
+  [
+   24.8,
+   25.3
+  ],
+  [
+   40.3,
+   41.0
+  ],
+  [
+   51.3,
+   52.467
+  ]
+ ],
+ "mastering": {
+  "compressor_max_gr_db": -6.39,
+  "true_peak_before_limiter_db": 3.95,
+  "limiter_max_gr_db": 5.31,
+  "lufs_pyloudnorm": -14.0,
+  "true_peak_4x_db": -1.36
+ },
+ "chords": [
+  {
+   "start": 0.0,
+   "name": "Am"
+  },
+  {
+   "start": 1.5,
+   "name": "Am/G"
+  },
+  {
+   "start": 3.0,
+   "name": "Fmaj7"
+  },
+  {
+   "start": 5.5,
+   "name": "Dm7"
+  },
+  {
+   "start": 8.0,
+   "name": "C"
+  },
+  {
+   "start": 11.0,
+   "name": "G/B"
+  },
+  {
+   "start": 12.0,
+   "name": "G"
+  },
+  {
+   "start": 13.5,
+   "name": "Esus4"
+  },
+  {
+   "start": 14.25,
+   "name": "E"
+  },
+  {
+   "start": 15.0,
+   "name": "Am"
+  },
+  {
+   "start": 17.0,
+   "name": "Am/G"
+  },
+  {
+   "start": 19.0,
+   "name": "F"
+  },
+  {
+   "start": 21.0,
+   "name": "Dm7"
+  },
+  {
+   "start": 22.0,
+   "name": "Esus4"
+  },
+  {
+   "start": 22.5,
+   "name": "E"
+  },
+  {
+   "start": 27.0,
+   "name": "Am"
+  },
+  {
+   "start": 29.5,
+   "name": "F"
+  },
+  {
+   "start": 31.5,
+   "name": "Dm7"
+  },
+  {
+   "start": 33.5,
+   "name": "Esus4"
+  },
+  {
+   "start": 34.6,
+   "name": "E"
+  }
+ ],
+ "sections": [
+  {
+   "start": 0,
+   "end": 8,
+   "name": "前奏 intro"
+  },
+  {
+   "start": 8,
+   "end": 15,
+   "name": "主歌 verse"
+  },
+  {
+   "start": 15,
+   "end": 24.8,
+   "name": "推进 → 高潮（23.00 暴雪和弦）"
+  },
+  {
+   "start": 24.8,
+   "end": 25.3,
+   "name": "断音（数字静音）"
+  },
+  {
+   "start": 25.3,
+   "end": 27,
+   "name": "留白"
+  },
+  {
+   "start": 27,
+   "end": 40.3,
+   "name": "尾声 1：回到 Am、渐慢渐弱、36.00 最后一个音"
+  },
+  {
+   "start": 41.5,
+   "end": 44,
+   "name": "极轻 E5"
+  },
+  {
+   "start": 46,
+   "end": 51.3,
+   "name": "尾声 2：A2 收尾"
+  }
+ ],
+ "notes_format": "与旧版相同：start(秒) / freq(Hz) / velocity(0–1)，可直接给 app/snow-song/snow.py 的 load_notes 用；midi_velocity 为原始 MIDI 力度",
+ "notes": [
+  {
+   "start": 0.0,
+   "duration": 2.6,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.583,
+   "midi_velocity": 74,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": "first_snowflake"
+  },
+  {
+   "start": 0.5118,
+   "duration": 0.8474,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 0.9972,
+   "duration": 0.9195,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.299,
+   "midi_velocity": 38,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 1.4946,
+   "duration": 0.9413,
+   "pitch": "G2",
+   "midi": 43,
+   "freq": 97.9989,
+   "velocity": 0.346,
+   "midi_velocity": 44,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 2.0101,
+   "duration": 0.8985,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.268,
+   "midi_velocity": 34,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 2.0227,
+   "duration": 1.0976,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.402,
+   "midi_velocity": 51,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 2.5193,
+   "duration": 0.9452,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.307,
+   "midi_velocity": 39,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 3.0634,
+   "duration": 0.917,
+   "pitch": "F2",
+   "midi": 41,
+   "freq": 87.3071,
+   "velocity": 0.315,
+   "midi_velocity": 40,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 3.0673,
+   "duration": 2.7049,
+   "pitch": "E4",
+   "midi": 64,
+   "freq": 329.6276,
+   "velocity": 0.417,
+   "midi_velocity": 53,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 3.0869,
+   "duration": 2.6478,
+   "pitch": "F2",
+   "midi": 41,
+   "freq": 87.3071,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 3.1169,
+   "duration": 2.6387,
+   "pitch": "C3",
+   "midi": 48,
+   "freq": 130.8128,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 3.5637,
+   "duration": 0.8441,
+   "pitch": "C3",
+   "midi": 48,
+   "freq": 130.8128,
+   "velocity": 0.22,
+   "midi_velocity": 28,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 3.5761,
+   "duration": 0.9648,
+   "pitch": "A4",
+   "midi": 69,
+   "freq": 440.0,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 4.0169,
+   "duration": 0.9099,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.26,
+   "midi_velocity": 33,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 4.4864,
+   "duration": 0.85,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.346,
+   "midi_velocity": 44,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 4.5013,
+   "duration": 0.5088,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 4.98,
+   "duration": 0.9643,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.299,
+   "midi_velocity": 38,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 4.987,
+   "duration": 0.5377,
+   "pitch": "B4",
+   "midi": 71,
+   "freq": 493.8833,
+   "velocity": 0.402,
+   "midi_velocity": 51,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 5.4919,
+   "duration": 0.8586,
+   "pitch": "D2",
+   "midi": 38,
+   "freq": 73.4162,
+   "velocity": 0.299,
+   "midi_velocity": 38,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 5.4995,
+   "duration": 1.5338,
+   "pitch": "A4",
+   "midi": 69,
+   "freq": 440.0,
+   "velocity": 0.465,
+   "midi_velocity": 59,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 5.5291,
+   "duration": 2.5815,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.37,
+   "midi_velocity": 47,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 5.5399,
+   "duration": 2.7089,
+   "pitch": "F3",
+   "midi": 53,
+   "freq": 174.6141,
+   "velocity": 0.354,
+   "midi_velocity": 45,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 5.5414,
+   "duration": 2.4844,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.37,
+   "midi_velocity": 47,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 5.5456,
+   "duration": 2.4093,
+   "pitch": "D2",
+   "midi": 38,
+   "freq": 73.4162,
+   "velocity": 0.417,
+   "midi_velocity": 53,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 5.9828,
+   "duration": 0.9196,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.283,
+   "midi_velocity": 36,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 6.5014,
+   "duration": 0.9588,
+   "pitch": "F3",
+   "midi": 53,
+   "freq": 174.6141,
+   "velocity": 0.323,
+   "midi_velocity": 41,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 7.0004,
+   "duration": 0.9544,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.236,
+   "midi_velocity": 30,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 7.0121,
+   "duration": 0.5369,
+   "pitch": "G4",
+   "midi": 67,
+   "freq": 391.9954,
+   "velocity": 0.378,
+   "midi_velocity": 48,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 7.5079,
+   "duration": 0.9266,
+   "pitch": "F3",
+   "midi": 53,
+   "freq": 174.6141,
+   "velocity": 0.244,
+   "midi_velocity": 31,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 7.5204,
+   "duration": 0.4981,
+   "pitch": "E4",
+   "midi": 64,
+   "freq": 329.6276,
+   "velocity": 0.307,
+   "midi_velocity": 39,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 8.0643,
+   "duration": 2.4726,
+   "pitch": "C2",
+   "midi": 36,
+   "freq": 65.4064,
+   "velocity": 0.197,
+   "midi_velocity": 25,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 8.0763,
+   "duration": 0.9045,
+   "pitch": "C3",
+   "midi": 48,
+   "freq": 130.8128,
+   "velocity": 0.307,
+   "midi_velocity": 39,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 8.0885,
+   "duration": 0.5068,
+   "pitch": "E4",
+   "midi": 64,
+   "freq": 329.6276,
+   "velocity": 0.37,
+   "midi_velocity": 47,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 8.1085,
+   "duration": 2.9727,
+   "pitch": "E4",
+   "midi": 64,
+   "freq": 329.6276,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 8.1175,
+   "duration": 3.1985,
+   "pitch": "C3",
+   "midi": 48,
+   "freq": 130.8128,
+   "velocity": 0.394,
+   "midi_velocity": 50,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 8.1276,
+   "duration": 2.9528,
+   "pitch": "G3",
+   "midi": 55,
+   "freq": 195.9977,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 8.5558,
+   "duration": 0.8236,
+   "pitch": "G3",
+   "midi": 55,
+   "freq": 195.9977,
+   "velocity": 0.354,
+   "midi_velocity": 45,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 8.5618,
+   "duration": 0.4732,
+   "pitch": "G4",
+   "midi": 67,
+   "freq": 391.9954,
+   "velocity": 0.417,
+   "midi_velocity": 53,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 8.995,
+   "duration": 0.9491,
+   "pitch": "D4",
+   "midi": 62,
+   "freq": 293.6648,
+   "velocity": 0.331,
+   "midi_velocity": 42,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 9.0019,
+   "duration": 0.6197,
+   "pitch": "D5",
+   "midi": 74,
+   "freq": 587.3295,
+   "velocity": 0.504,
+   "midi_velocity": 64,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 9.5022,
+   "duration": 0.9432,
+   "pitch": "E4",
+   "midi": 64,
+   "freq": 329.6276,
+   "velocity": 0.394,
+   "midi_velocity": 50,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 9.6,
+   "duration": 1.4,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.543,
+   "midi_velocity": 69,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": "sparkle_high_note"
+  },
+  {
+   "start": 9.6,
+   "duration": 1.4,
+   "pitch": "C6",
+   "midi": 84,
+   "freq": 1046.5023,
+   "velocity": 0.457,
+   "midi_velocity": 58,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": "sparkle_high_note"
+  },
+  {
+   "start": 9.98,
+   "duration": 0.8624,
+   "pitch": "D4",
+   "midi": 62,
+   "freq": 293.6648,
+   "velocity": 0.354,
+   "midi_velocity": 45,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 10.5146,
+   "duration": 0.9547,
+   "pitch": "G3",
+   "midi": 55,
+   "freq": 195.9977,
+   "velocity": 0.299,
+   "midi_velocity": 38,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 10.9926,
+   "duration": 1.6354,
+   "pitch": "B1",
+   "midi": 35,
+   "freq": 61.7354,
+   "velocity": 0.181,
+   "midi_velocity": 23,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 11.0016,
+   "duration": 0.9905,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.331,
+   "midi_velocity": 42,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 11.0101,
+   "duration": 0.5364,
+   "pitch": "B4",
+   "midi": 71,
+   "freq": 493.8833,
+   "velocity": 0.394,
+   "midi_velocity": 50,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 11.0321,
+   "duration": 1.2052,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.394,
+   "midi_velocity": 50,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 11.0428,
+   "duration": 1.0642,
+   "pitch": "D3",
+   "midi": 50,
+   "freq": 146.8324,
+   "velocity": 0.394,
+   "midi_velocity": 50,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 11.0501,
+   "duration": 1.1287,
+   "pitch": "G3",
+   "midi": 55,
+   "freq": 195.9977,
+   "velocity": 0.417,
+   "midi_velocity": 53,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 11.5069,
+   "duration": 0.8959,
+   "pitch": "D3",
+   "midi": 50,
+   "freq": 146.8324,
+   "velocity": 0.26,
+   "midi_velocity": 33,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 11.5187,
+   "duration": 0.5226,
+   "pitch": "G4",
+   "midi": 67,
+   "freq": 391.9954,
+   "velocity": 0.354,
+   "midi_velocity": 45,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 12.0569,
+   "duration": 0.7979,
+   "pitch": "G2",
+   "midi": 43,
+   "freq": 97.9989,
+   "velocity": 0.354,
+   "midi_velocity": 45,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 12.0601,
+   "duration": 1.5529,
+   "pitch": "D3",
+   "midi": 50,
+   "freq": 146.8324,
+   "velocity": 0.433,
+   "midi_velocity": 55,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 12.0666,
+   "duration": 0.9796,
+   "pitch": "D5",
+   "midi": 74,
+   "freq": 587.3295,
+   "velocity": 0.417,
+   "midi_velocity": 53,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 12.1048,
+   "duration": 1.7184,
+   "pitch": "B3",
+   "midi": 59,
+   "freq": 246.9417,
+   "velocity": 0.417,
+   "midi_velocity": 53,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 12.121,
+   "duration": 1.6826,
+   "pitch": "G2",
+   "midi": 43,
+   "freq": 97.9989,
+   "velocity": 0.425,
+   "midi_velocity": 54,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 12.5434,
+   "duration": 0.8543,
+   "pitch": "D3",
+   "midi": 50,
+   "freq": 146.8324,
+   "velocity": 0.307,
+   "midi_velocity": 39,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 13.0163,
+   "duration": 0.8568,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.276,
+   "midi_velocity": 35,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 13.0231,
+   "duration": 0.4963,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.378,
+   "midi_velocity": 48,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 13.48,
+   "duration": 0.8595,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.291,
+   "midi_velocity": 37,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 13.4883,
+   "duration": 0.5388,
+   "pitch": "B4",
+   "midi": 71,
+   "freq": 493.8833,
+   "velocity": 0.386,
+   "midi_velocity": 49,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 13.5513,
+   "duration": 0.8149,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 13.5676,
+   "duration": 0.9008,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 13.5754,
+   "duration": 0.8706,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 13.9881,
+   "duration": 0.9246,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.315,
+   "midi_velocity": 40,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 14.0001,
+   "duration": 0.3047,
+   "pitch": "A4",
+   "midi": 69,
+   "freq": 440.0,
+   "velocity": 0.378,
+   "midi_velocity": 48,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 14.2653,
+   "duration": 0.937,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.283,
+   "midi_velocity": 36,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 14.28,
+   "duration": 0.5347,
+   "pitch": "G#4",
+   "midi": 68,
+   "freq": 415.3047,
+   "velocity": 0.346,
+   "midi_velocity": 44,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 14.2826,
+   "duration": 0.8482,
+   "pitch": "G#3",
+   "midi": 56,
+   "freq": 207.6523,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 14.3059,
+   "duration": 0.8125,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.457,
+   "midi_velocity": 58,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 14.3309,
+   "duration": 0.8278,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.433,
+   "midi_velocity": 55,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 14.7872,
+   "duration": 0.8594,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.276,
+   "midi_velocity": 35,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 14.7938,
+   "duration": 0.2706,
+   "pitch": "B4",
+   "midi": 71,
+   "freq": 493.8833,
+   "velocity": 0.339,
+   "midi_velocity": 43,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 15.0518,
+   "duration": 2.5491,
+   "pitch": "A1",
+   "midi": 33,
+   "freq": 55.0,
+   "velocity": 0.165,
+   "midi_velocity": 21,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 15.0622,
+   "duration": 0.423,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.197,
+   "midi_velocity": 25,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 15.0685,
+   "duration": 2.2157,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.457,
+   "midi_velocity": 58,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 15.0733,
+   "duration": 1.4973,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.268,
+   "midi_velocity": 34,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 15.0762,
+   "duration": 1.9154,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.504,
+   "midi_velocity": 64,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 15.0774,
+   "duration": 2.1623,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.488,
+   "midi_velocity": 62,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 15.1323,
+   "duration": 2.2318,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 15.286,
+   "duration": 0.4286,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.283,
+   "midi_velocity": 36,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 15.5407,
+   "duration": 0.4001,
+   "pitch": "B3",
+   "midi": 59,
+   "freq": 246.9417,
+   "velocity": 0.26,
+   "midi_velocity": 33,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 15.8,
+   "duration": 0.4419,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.181,
+   "midi_velocity": 23,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 16.0151,
+   "duration": 0.4222,
+   "pitch": "B3",
+   "midi": 59,
+   "freq": 246.9417,
+   "velocity": 0.244,
+   "midi_velocity": 31,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 16.2637,
+   "duration": 0.4369,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.228,
+   "midi_velocity": 29,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 16.52,
+   "duration": 0.4284,
+   "pitch": "B3",
+   "midi": 59,
+   "freq": 246.9417,
+   "velocity": 0.307,
+   "midi_velocity": 39,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 16.5349,
+   "duration": 0.4911,
+   "pitch": "D5",
+   "midi": 74,
+   "freq": 587.3295,
+   "velocity": 0.378,
+   "midi_velocity": 48,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 16.73,
+   "duration": 0.415,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.346,
+   "midi_velocity": 44,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 16.9875,
+   "duration": 0.4569,
+   "pitch": "G2",
+   "midi": 43,
+   "freq": 97.9989,
+   "velocity": 0.354,
+   "midi_velocity": 45,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 16.9976,
+   "duration": 1.0525,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.417,
+   "midi_velocity": 53,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 17.0045,
+   "duration": 2.1161,
+   "pitch": "G2",
+   "midi": 43,
+   "freq": 97.9989,
+   "velocity": 0.449,
+   "midi_velocity": 57,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 17.0475,
+   "duration": 2.0741,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.472,
+   "midi_velocity": 60,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 17.0635,
+   "duration": 1.9817,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.425,
+   "midi_velocity": 54,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 17.0687,
+   "duration": 2.2762,
+   "pitch": "G2",
+   "midi": 43,
+   "freq": 97.9989,
+   "velocity": 0.575,
+   "midi_velocity": 73,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 17.261,
+   "duration": 0.4176,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.315,
+   "midi_velocity": 40,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 17.4998,
+   "duration": 0.4352,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.276,
+   "midi_velocity": 35,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 17.7431,
+   "duration": 0.4703,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.283,
+   "midi_velocity": 36,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 18.0183,
+   "duration": 0.5025,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.213,
+   "midi_velocity": 27,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 18.0235,
+   "duration": 0.5375,
+   "pitch": "B4",
+   "midi": 71,
+   "freq": 493.8833,
+   "velocity": 0.402,
+   "midi_velocity": 51,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 18.2547,
+   "duration": 0.4564,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.291,
+   "midi_velocity": 37,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 18.5336,
+   "duration": 0.4734,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.276,
+   "midi_velocity": 35,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 18.5402,
+   "duration": 0.5723,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.346,
+   "midi_velocity": 44,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 18.8114,
+   "duration": 0.4329,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.299,
+   "midi_velocity": 38,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 19.0527,
+   "duration": 0.4204,
+   "pitch": "F2",
+   "midi": 41,
+   "freq": 87.3071,
+   "velocity": 0.291,
+   "midi_velocity": 37,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 19.063,
+   "duration": 1.9703,
+   "pitch": "F2",
+   "midi": 41,
+   "freq": 87.3071,
+   "velocity": 0.512,
+   "midi_velocity": 65,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 19.0668,
+   "duration": 0.9911,
+   "pitch": "A5",
+   "midi": 81,
+   "freq": 880.0,
+   "velocity": 0.402,
+   "midi_velocity": 51,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 19.0682,
+   "duration": 1.1637,
+   "pitch": "A5",
+   "midi": 81,
+   "freq": 880.0,
+   "velocity": 0.591,
+   "midi_velocity": 75,
+   "channel": 2,
+   "part": "violin_line",
+   "cue": null
+  },
+  {
+   "start": 19.084,
+   "duration": 1.9546,
+   "pitch": "C3",
+   "midi": 48,
+   "freq": 130.8128,
+   "velocity": 0.433,
+   "midi_velocity": 55,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 19.1051,
+   "duration": 1.9451,
+   "pitch": "F2",
+   "midi": 41,
+   "freq": 87.3071,
+   "velocity": 0.472,
+   "midi_velocity": 60,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 19.1167,
+   "duration": 2.0957,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.504,
+   "midi_velocity": 64,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 19.3258,
+   "duration": 0.434,
+   "pitch": "C3",
+   "midi": 48,
+   "freq": 130.8128,
+   "velocity": 0.331,
+   "midi_velocity": 42,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 19.532,
+   "duration": 0.4216,
+   "pitch": "G3",
+   "midi": 55,
+   "freq": 195.9977,
+   "velocity": 0.22,
+   "midi_velocity": 28,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 19.8025,
+   "duration": 0.4145,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.299,
+   "midi_velocity": 38,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 20.0217,
+   "duration": 0.4276,
+   "pitch": "G3",
+   "midi": 55,
+   "freq": 195.9977,
+   "velocity": 0.276,
+   "midi_velocity": 35,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 20.0304,
+   "duration": 0.5448,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.591,
+   "midi_velocity": 75,
+   "channel": 2,
+   "part": "violin_line",
+   "cue": null
+  },
+  {
+   "start": 20.0362,
+   "duration": 0.5103,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.504,
+   "midi_velocity": 64,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 20.2504,
+   "duration": 0.4405,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.307,
+   "midi_velocity": 39,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 20.5015,
+   "duration": 0.441,
+   "pitch": "G3",
+   "midi": 55,
+   "freq": 195.9977,
+   "velocity": 0.354,
+   "midi_velocity": 45,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 20.5087,
+   "duration": 0.6084,
+   "pitch": "F5",
+   "midi": 77,
+   "freq": 698.4565,
+   "velocity": 0.646,
+   "midi_velocity": 82,
+   "channel": 2,
+   "part": "violin_line",
+   "cue": null
+  },
+  {
+   "start": 20.5095,
+   "duration": 0.5268,
+   "pitch": "F5",
+   "midi": 77,
+   "freq": 698.4565,
+   "velocity": 0.591,
+   "midi_velocity": 75,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 20.7329,
+   "duration": 0.4443,
+   "pitch": "C3",
+   "midi": 48,
+   "freq": 130.8128,
+   "velocity": 0.315,
+   "midi_velocity": 40,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 20.9939,
+   "duration": 0.4301,
+   "pitch": "D2",
+   "midi": 38,
+   "freq": 73.4162,
+   "velocity": 0.378,
+   "midi_velocity": 48,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 21.0,
+   "duration": 1.1482,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.394,
+   "midi_velocity": 50,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 21.004,
+   "duration": 0.761,
+   "pitch": "G5",
+   "midi": 79,
+   "freq": 783.9909,
+   "velocity": 0.583,
+   "midi_velocity": 74,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 21.019,
+   "duration": 1.0022,
+   "pitch": "D2",
+   "midi": 38,
+   "freq": 73.4162,
+   "velocity": 0.512,
+   "midi_velocity": 65,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 21.0286,
+   "duration": 0.8693,
+   "pitch": "G5",
+   "midi": 79,
+   "freq": 783.9909,
+   "velocity": 0.622,
+   "midi_velocity": 79,
+   "channel": 2,
+   "part": "violin_line",
+   "cue": null
+  },
+  {
+   "start": 21.0344,
+   "duration": 1.1682,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.504,
+   "midi_velocity": 64,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 21.0432,
+   "duration": 1.1854,
+   "pitch": "F3",
+   "midi": 53,
+   "freq": 174.6141,
+   "velocity": 0.472,
+   "midi_velocity": 60,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 21.0547,
+   "duration": 1.1654,
+   "pitch": "D2",
+   "midi": 38,
+   "freq": 73.4162,
+   "velocity": 0.449,
+   "midi_velocity": 57,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 21.2571,
+   "duration": 0.4853,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.354,
+   "midi_velocity": 45,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 21.5114,
+   "duration": 0.448,
+   "pitch": "F3",
+   "midi": 53,
+   "freq": 174.6141,
+   "velocity": 0.362,
+   "midi_velocity": 46,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 21.73,
+   "duration": 0.4338,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.283,
+   "midi_velocity": 36,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 21.7446,
+   "duration": 0.2851,
+   "pitch": "F5",
+   "midi": 77,
+   "freq": 698.4565,
+   "velocity": 0.614,
+   "midi_velocity": 78,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 21.7618,
+   "duration": 0.3301,
+   "pitch": "F5",
+   "midi": 77,
+   "freq": 698.4565,
+   "velocity": 0.701,
+   "midi_velocity": 89,
+   "channel": 2,
+   "part": "violin_line",
+   "cue": null
+  },
+  {
+   "start": 21.98,
+   "duration": 0.4848,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.291,
+   "midi_velocity": 37,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 21.993,
+   "duration": 0.5123,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.575,
+   "midi_velocity": 73,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 21.9945,
+   "duration": 0.5558,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.488,
+   "midi_velocity": 62,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 22.0322,
+   "duration": 0.6299,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.48,
+   "midi_velocity": 61,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 22.0345,
+   "duration": 0.606,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.772,
+   "midi_velocity": 98,
+   "channel": 2,
+   "part": "violin_line",
+   "cue": null
+  },
+  {
+   "start": 22.0439,
+   "duration": 0.6326,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.465,
+   "midi_velocity": 59,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 22.061,
+   "duration": 0.6067,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.52,
+   "midi_velocity": 66,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 22.2465,
+   "duration": 0.4389,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.252,
+   "midi_velocity": 32,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 22.5072,
+   "duration": 0.4526,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.677,
+   "midi_velocity": 86,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 22.5097,
+   "duration": 0.469,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 22.5127,
+   "duration": 0.5972,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.504,
+   "midi_velocity": 64,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 22.5253,
+   "duration": 0.5999,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.827,
+   "midi_velocity": 105,
+   "channel": 2,
+   "part": "violin_line",
+   "cue": null
+  },
+  {
+   "start": 22.546,
+   "duration": 0.6055,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.512,
+   "midi_velocity": 65,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 22.5575,
+   "duration": 0.6128,
+   "pitch": "G#3",
+   "midi": 56,
+   "freq": 207.6523,
+   "velocity": 0.496,
+   "midi_velocity": 63,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 22.5714,
+   "duration": 0.645,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.472,
+   "midi_velocity": 60,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 22.7312,
+   "duration": 0.4769,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "A1",
+   "midi": 33,
+   "freq": 55.0,
+   "velocity": 0.63,
+   "midi_velocity": 80,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.661,
+   "midi_velocity": 84,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.661,
+   "midi_velocity": 84,
+   "channel": 2,
+   "part": "strings_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.583,
+   "midi_velocity": 74,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.661,
+   "midi_velocity": 84,
+   "channel": 2,
+   "part": "strings_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.614,
+   "midi_velocity": 78,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.661,
+   "midi_velocity": 84,
+   "channel": 2,
+   "part": "strings_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "B3",
+   "midi": 59,
+   "freq": 246.9417,
+   "velocity": 0.504,
+   "midi_velocity": 64,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.598,
+   "midi_velocity": 76,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.661,
+   "midi_velocity": 84,
+   "channel": 2,
+   "part": "strings_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "E4",
+   "midi": 64,
+   "freq": 329.6276,
+   "velocity": 0.583,
+   "midi_velocity": 74,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "E4",
+   "midi": 64,
+   "freq": 329.6276,
+   "velocity": 0.661,
+   "midi_velocity": 84,
+   "channel": 2,
+   "part": "strings_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "F4",
+   "midi": 65,
+   "freq": 349.2282,
+   "velocity": 0.472,
+   "midi_velocity": 60,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "G4",
+   "midi": 67,
+   "freq": 391.9954,
+   "velocity": 0.488,
+   "midi_velocity": 62,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "A4",
+   "midi": 69,
+   "freq": 440.0,
+   "velocity": 0.567,
+   "midi_velocity": 72,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "A4",
+   "midi": 69,
+   "freq": 440.0,
+   "velocity": 0.661,
+   "midi_velocity": 84,
+   "channel": 2,
+   "part": "strings_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.551,
+   "midi_velocity": 70,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.661,
+   "midi_velocity": 84,
+   "channel": 2,
+   "part": "strings_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.551,
+   "midi_velocity": 70,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.661,
+   "midi_velocity": 84,
+   "channel": 2,
+   "part": "strings_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.0,
+   "duration": 1.75,
+   "pitch": "A5",
+   "midi": 81,
+   "freq": 880.0,
+   "velocity": 0.535,
+   "midi_velocity": 68,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": "blizzard_chord"
+  },
+  {
+   "start": 23.3009,
+   "duration": 0.5956,
+   "pitch": "A6",
+   "midi": 93,
+   "freq": 1760.0,
+   "velocity": 0.567,
+   "midi_velocity": 72,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 23.3874,
+   "duration": 0.5757,
+   "pitch": "E6",
+   "midi": 88,
+   "freq": 1318.5102,
+   "velocity": 0.496,
+   "midi_velocity": 63,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 23.4676,
+   "duration": 0.5736,
+   "pitch": "C6",
+   "midi": 84,
+   "freq": 1046.5023,
+   "velocity": 0.457,
+   "midi_velocity": 58,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 23.5688,
+   "duration": 0.5525,
+   "pitch": "B5",
+   "midi": 83,
+   "freq": 987.7666,
+   "velocity": 0.386,
+   "midi_velocity": 49,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 23.6565,
+   "duration": 0.5808,
+   "pitch": "A5",
+   "midi": 81,
+   "freq": 880.0,
+   "velocity": 0.591,
+   "midi_velocity": 75,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 23.7633,
+   "duration": 0.5452,
+   "pitch": "G5",
+   "midi": 79,
+   "freq": 783.9909,
+   "velocity": 0.48,
+   "midi_velocity": 61,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 23.8461,
+   "duration": 0.6188,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.512,
+   "midi_velocity": 65,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 23.9631,
+   "duration": 0.5613,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.378,
+   "midi_velocity": 48,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 24.0419,
+   "duration": 0.5888,
+   "pitch": "B4",
+   "midi": 71,
+   "freq": 493.8833,
+   "velocity": 0.52,
+   "midi_velocity": 66,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 24.1357,
+   "duration": 0.555,
+   "pitch": "A4",
+   "midi": 69,
+   "freq": 440.0,
+   "velocity": 0.535,
+   "midi_velocity": 68,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 24.23,
+   "duration": 0.5985,
+   "pitch": "E4",
+   "midi": 64,
+   "freq": 329.6276,
+   "velocity": 0.512,
+   "midi_velocity": 65,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 24.3547,
+   "duration": 0.6061,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.346,
+   "midi_velocity": 44,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 24.4317,
+   "duration": 0.6132,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.52,
+   "midi_velocity": 66,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 24.5241,
+   "duration": 0.6294,
+   "pitch": "A5",
+   "midi": 81,
+   "freq": 880.0,
+   "velocity": 0.433,
+   "midi_velocity": 55,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 24.6254,
+   "duration": 0.6068,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 0,
+   "part": "piano_blizzard",
+   "cue": null
+  },
+  {
+   "start": 26.9817,
+   "duration": 2.5596,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.417,
+   "midi_velocity": 53,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 27.0,
+   "duration": 1.0,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.331,
+   "midi_velocity": 42,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": "music_return"
+  },
+  {
+   "start": 27.02,
+   "duration": 2.3807,
+   "pitch": "A1",
+   "midi": 33,
+   "freq": 55.0,
+   "velocity": 0.22,
+   "midi_velocity": 28,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 27.0253,
+   "duration": 0.9348,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.276,
+   "midi_velocity": 35,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 27.063,
+   "duration": 2.6178,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.323,
+   "midi_velocity": 41,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 27.106,
+   "duration": 2.6236,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.386,
+   "midi_velocity": 49,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 27.1084,
+   "duration": 2.7993,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.386,
+   "midi_velocity": 49,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 27.4955,
+   "duration": 0.9178,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.37,
+   "midi_velocity": 47,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 28.0035,
+   "duration": 1.0257,
+   "pitch": "B3",
+   "midi": 59,
+   "freq": 246.9417,
+   "velocity": 0.252,
+   "midi_velocity": 32,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 28.0148,
+   "duration": 0.7117,
+   "pitch": "D5",
+   "midi": 74,
+   "freq": 587.3295,
+   "velocity": 0.378,
+   "midi_velocity": 48,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 28.5692,
+   "duration": 1.0617,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.276,
+   "midi_velocity": 35,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 28.704,
+   "duration": 1.1049,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.354,
+   "midi_velocity": 45,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 29.1349,
+   "duration": 0.9772,
+   "pitch": "B3",
+   "midi": 59,
+   "freq": 246.9417,
+   "velocity": 0.283,
+   "midi_velocity": 36,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 29.5285,
+   "duration": 2.0776,
+   "pitch": "F2",
+   "midi": 41,
+   "freq": 87.3071,
+   "velocity": 0.417,
+   "midi_velocity": 53,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 29.5475,
+   "duration": 1.0644,
+   "pitch": "F2",
+   "midi": 41,
+   "freq": 87.3071,
+   "velocity": 0.26,
+   "midi_velocity": 33,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 29.6403,
+   "duration": 2.0755,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.386,
+   "midi_velocity": 49,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 29.6417,
+   "duration": 2.0699,
+   "pitch": "C3",
+   "midi": 48,
+   "freq": 130.8128,
+   "velocity": 0.425,
+   "midi_velocity": 54,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 29.6682,
+   "duration": 2.3063,
+   "pitch": "F2",
+   "midi": 41,
+   "freq": 87.3071,
+   "velocity": 0.425,
+   "midi_velocity": 54,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 29.8423,
+   "duration": 1.0869,
+   "pitch": "A4",
+   "midi": 69,
+   "freq": 440.0,
+   "velocity": 0.307,
+   "midi_velocity": 39,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 30.104,
+   "duration": 1.1504,
+   "pitch": "C3",
+   "midi": 48,
+   "freq": 130.8128,
+   "velocity": 0.26,
+   "midi_velocity": 33,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 30.7212,
+   "duration": 1.1635,
+   "pitch": "G3",
+   "midi": 55,
+   "freq": 195.9977,
+   "velocity": 0.299,
+   "midi_velocity": 38,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 30.906,
+   "duration": 0.8812,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.205,
+   "midi_velocity": 26,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 31.3971,
+   "duration": 1.1826,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.252,
+   "midi_velocity": 32,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 31.5424,
+   "duration": 1.1162,
+   "pitch": "D2",
+   "midi": 38,
+   "freq": 73.4162,
+   "velocity": 0.228,
+   "midi_velocity": 29,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 31.5607,
+   "duration": 2.1603,
+   "pitch": "D2",
+   "midi": 38,
+   "freq": 73.4162,
+   "velocity": 0.394,
+   "midi_velocity": 50,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 31.6198,
+   "duration": 2.0121,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.386,
+   "midi_velocity": 49,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 31.6459,
+   "duration": 2.1829,
+   "pitch": "D2",
+   "midi": 38,
+   "freq": 73.4162,
+   "velocity": 0.315,
+   "midi_velocity": 40,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 31.6691,
+   "duration": 1.9935,
+   "pitch": "C4",
+   "midi": 60,
+   "freq": 261.6256,
+   "velocity": 0.323,
+   "midi_velocity": 41,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 31.6744,
+   "duration": 2.2632,
+   "pitch": "F3",
+   "midi": 53,
+   "freq": 174.6141,
+   "velocity": 0.362,
+   "midi_velocity": 46,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 31.8553,
+   "duration": 0.8731,
+   "pitch": "D5",
+   "midi": 74,
+   "freq": 587.3295,
+   "velocity": 0.236,
+   "midi_velocity": 30,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 32.1818,
+   "duration": 1.2676,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.307,
+   "midi_velocity": 39,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 32.6938,
+   "duration": 1.0582,
+   "pitch": "C5",
+   "midi": 72,
+   "freq": 523.2511,
+   "velocity": 0.276,
+   "midi_velocity": 35,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 32.8706,
+   "duration": 1.3818,
+   "pitch": "F3",
+   "midi": 53,
+   "freq": 174.6141,
+   "velocity": 0.276,
+   "midi_velocity": 35,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 33.5282,
+   "duration": 1.4121,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.252,
+   "midi_velocity": 32,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 33.5365,
+   "duration": 1.2119,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.346,
+   "midi_velocity": 44,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 33.6182,
+   "duration": 1.2959,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.394,
+   "midi_velocity": 50,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 33.6283,
+   "duration": 1.3584,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.323,
+   "midi_velocity": 41,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 33.6524,
+   "duration": 1.2916,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.346,
+   "midi_velocity": 44,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 33.8617,
+   "duration": 0.8896,
+   "pitch": "B4",
+   "midi": 71,
+   "freq": 493.8833,
+   "velocity": 0.26,
+   "midi_velocity": 33,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 34.2385,
+   "duration": 1.4662,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.26,
+   "midi_velocity": 33,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 34.5959,
+   "duration": 1.5122,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.37,
+   "midi_velocity": 47,
+   "channel": 3,
+   "part": "cello",
+   "cue": null
+  },
+  {
+   "start": 34.62,
+   "duration": 1.4921,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.26,
+   "midi_velocity": 33,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 34.6784,
+   "duration": 1.548,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.354,
+   "midi_velocity": 45,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 34.699,
+   "duration": 1.5841,
+   "pitch": "G#3",
+   "midi": 56,
+   "freq": 207.6523,
+   "velocity": 0.409,
+   "midi_velocity": 52,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 34.72,
+   "duration": 1.1319,
+   "pitch": "G#4",
+   "midi": 68,
+   "freq": 415.3047,
+   "velocity": 0.236,
+   "midi_velocity": 30,
+   "channel": 0,
+   "part": "piano_rh",
+   "cue": null
+  },
+  {
+   "start": 34.7243,
+   "duration": 1.4631,
+   "pitch": "E2",
+   "midi": 40,
+   "freq": 82.4069,
+   "velocity": 0.339,
+   "midi_velocity": 43,
+   "channel": 1,
+   "part": "strings",
+   "cue": null
+  },
+  {
+   "start": 35.3849,
+   "duration": 1.5815,
+   "pitch": "B2",
+   "midi": 47,
+   "freq": 123.4708,
+   "velocity": 0.189,
+   "midi_velocity": 24,
+   "channel": 0,
+   "part": "piano_lh",
+   "cue": null
+  },
+  {
+   "start": 36.0,
+   "duration": 2.8,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.362,
+   "midi_velocity": 46,
+   "channel": 0,
+   "part": "piano_last",
+   "cue": "last_note"
+  },
+  {
+   "start": 36.0,
+   "duration": 2.8,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.268,
+   "midi_velocity": 34,
+   "channel": 0,
+   "part": "piano_last",
+   "cue": "last_note"
+  },
+  {
+   "start": 36.0,
+   "duration": 2.8,
+   "pitch": "A4",
+   "midi": 69,
+   "freq": 440.0,
+   "velocity": 0.315,
+   "midi_velocity": 40,
+   "channel": 0,
+   "part": "piano_last",
+   "cue": "last_note"
+  },
+  {
+   "start": 41.5,
+   "duration": 1.4,
+   "pitch": "E5",
+   "midi": 76,
+   "freq": 659.2551,
+   "velocity": 0.236,
+   "midi_velocity": 30,
+   "channel": 0,
+   "part": "piano_E",
+   "cue": "soft_high_E"
+  },
+  {
+   "start": 41.5,
+   "duration": 1.4,
+   "pitch": "E6",
+   "midi": 88,
+   "freq": 1318.5102,
+   "velocity": 0.142,
+   "midi_velocity": 18,
+   "channel": 0,
+   "part": "piano_E",
+   "cue": "soft_high_E"
+  },
+  {
+   "start": 45.9929,
+   "duration": 3.6604,
+   "pitch": "A3",
+   "midi": 57,
+   "freq": 220.0,
+   "velocity": 0.22,
+   "midi_velocity": 28,
+   "channel": 4,
+   "part": "pad",
+   "cue": null
+  },
+  {
+   "start": 45.9959,
+   "duration": 4.1792,
+   "pitch": "E4",
+   "midi": 64,
+   "freq": 329.6276,
+   "velocity": 0.236,
+   "midi_velocity": 30,
+   "channel": 4,
+   "part": "pad",
+   "cue": null
+  },
+  {
+   "start": 46.0,
+   "duration": 3.2,
+   "pitch": "A2",
+   "midi": 45,
+   "freq": 110.0,
+   "velocity": 0.362,
+   "midi_velocity": 46,
+   "channel": 0,
+   "part": "piano_end",
+   "cue": "ending_A"
+  },
+  {
+   "start": 46.3439,
+   "duration": 3.0043,
+   "pitch": "E3",
+   "midi": 52,
+   "freq": 164.8138,
+   "velocity": 0.165,
+   "midi_velocity": 21,
+   "channel": 0,
+   "part": "piano_end",
+   "cue": null
+  },
+  {
+   "start": 46.787,
+   "duration": 2.9225,
+   "pitch": "B3",
+   "midi": 59,
+   "freq": 246.9417,
+   "velocity": 0.213,
+   "midi_velocity": 27,
+   "channel": 0,
+   "part": "piano_end",
+   "cue": null
+  }
+ ],
+ "midi_cc": [
+  {
+   "time": 0.03,
+   "channel": 0,
+   "cc": 64,
+   "value": 100
+  },
+  {
+   "time": 1.4961,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 1.6059,
+   "channel": 0,
+   "cc": 64,
+   "value": 108
+  },
+  {
+   "time": 3.0784,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 3.1626,
+   "channel": 0,
+   "cc": 64,
+   "value": 115
+  },
+  {
+   "time": 5.4928,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 5.6024,
+   "channel": 0,
+   "cc": 64,
+   "value": 103
+  },
+  {
+   "time": 8.0682,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 8.205,
+   "channel": 0,
+   "cc": 64,
+   "value": 108
+  },
+  {
+   "time": 11.005,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 11.1276,
+   "channel": 0,
+   "cc": 64,
+   "value": 97
+  },
+  {
+   "time": 12.0607,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 12.1941,
+   "channel": 0,
+   "cc": 64,
+   "value": 106
+  },
+  {
+   "time": 13.4827,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 13.5741,
+   "channel": 0,
+   "cc": 64,
+   "value": 112
+  },
+  {
+   "time": 14.2805,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 14.3477,
+   "channel": 0,
+   "cc": 64,
+   "value": 106
+  },
+  {
+   "time": 15.0706,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 15.1341,
+   "channel": 0,
+   "cc": 64,
+   "value": 93
+  },
+  {
+   "time": 17.0004,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 17.1041,
+   "channel": 0,
+   "cc": 64,
+   "value": 99
+  },
+  {
+   "time": 19.0551,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 19.1491,
+   "channel": 0,
+   "cc": 64,
+   "value": 101
+  },
+  {
+   "time": 21.0197,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 21.1142,
+   "channel": 0,
+   "cc": 64,
+   "value": 111
+  },
+  {
+   "time": 22.0097,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 22.1174,
+   "channel": 0,
+   "cc": 64,
+   "value": 108
+  },
+  {
+   "time": 22.4735,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 22.5739,
+   "channel": 0,
+   "cc": 64,
+   "value": 100
+  },
+  {
+   "time": 22.9639,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 23.06,
+   "channel": 0,
+   "cc": 64,
+   "value": 127
+  },
+  {
+   "time": 24.7,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 27.02,
+   "channel": 0,
+   "cc": 64,
+   "value": 96
+  },
+  {
+   "time": 29.5649,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 29.6323,
+   "channel": 0,
+   "cc": 64,
+   "value": 107
+  },
+  {
+   "time": 31.5469,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 31.6247,
+   "channel": 0,
+   "cc": 64,
+   "value": 93
+  },
+  {
+   "time": 33.5521,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 33.6378,
+   "channel": 0,
+   "cc": 64,
+   "value": 97
+  },
+  {
+   "time": 34.6455,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 34.7133,
+   "channel": 0,
+   "cc": 64,
+   "value": 114
+  },
+  {
+   "time": 35.97,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 36.06,
+   "channel": 0,
+   "cc": 64,
+   "value": 110
+  },
+  {
+   "time": 38.75,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 41.52,
+   "channel": 0,
+   "cc": 64,
+   "value": 90
+  },
+  {
+   "time": 43.2,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  },
+  {
+   "time": 46.03,
+   "channel": 0,
+   "cc": 64,
+   "value": 100
+  },
+  {
+   "time": 50.2,
+   "channel": 0,
+   "cc": 64,
+   "value": 0
+  }
+ ],
+ "verify": {
+  "frames": 2518416,
+  "file": "D4_配乐v2_B2_-14LUFS.wav",
+  "sr": 48000,
+  "subtype": "PCM_24",
+  "channels": 2,
+  "duration": 52.467,
+  "ebur128": {
+   "I_LUFS": -14.0,
+   "LRA": 20.9,
+   "true_peak_dBFS": -1.4
+  },
+  "silence_24_80_25_30": {
+   "peak_dbfs": null,
+   "rms_dbfs": null,
+   "all_zero": true
+  },
+  "silence_40_3_41_0": {
+   "peak_dbfs": null,
+   "rms_dbfs": null,
+   "all_zero": true
+  },
+  "last_nonzero_before_cut": 24.8,
+  "first_nonzero_after_cut": 26.983,
+  "cues": {
+   "first_snowflake": {
+    "target": 0.0,
+    "onset_peak": 0.024,
+    "onset_backtrack": 0.021,
+    "first_nonzero_sample_sec": 0.002
+   },
+   "sparkle_high_note": {
+    "target": 9.6,
+    "onset_peak": 9.624,
+    "onset_backtrack": 9.619
+   },
+   "blizzard_chord": {
+    "target": 23.0,
+    "onset_peak": 23.024,
+    "onset_backtrack": 23.011
+   },
+   "music_return": {
+    "target": 27.0,
+    "onset_peak": 26.997,
+    "onset_backtrack": 26.992
+   },
+   "last_note": {
+    "target": 36.0,
+    "onset_peak": 36.021,
+    "onset_backtrack": 36.008
+   },
+   "soft_high_E": {
+    "target": 41.5,
+    "onset_peak": 41.523,
+    "onset_backtrack": 41.515
+   },
+   "ending_A": {
+    "target": 46.0,
+    "onset_peak": 46.019,
+    "onset_backtrack": 46.011
+   }
+  },
+  "tempo_librosa": 56.81818181818182,
+  "key_estimate": "A minor",
+  "key_corr": 0.865,
+  "section_levels": {
+   "0-8": {
+    "peak_dbfs": -3.2,
+    "rms_dbfs": -20.3,
+    "all_zero": false
+   },
+   "8-15": {
+    "peak_dbfs": -1.6,
+    "rms_dbfs": -19.1,
+    "all_zero": false
+   },
+   "15-23": {
+    "peak_dbfs": -1.4,
+    "rms_dbfs": -13.6,
+    "all_zero": false
+   },
+   "23-24.8": {
+    "peak_dbfs": -1.4,
+    "rms_dbfs": -11.0,
+    "all_zero": false
+   },
+   "27-36": {
+    "peak_dbfs": -5.8,
+    "rms_dbfs": -22.2,
+    "all_zero": false
+   },
+   "36-40.3": {
+    "peak_dbfs": -12.9,
+    "rms_dbfs": -32.4,
+    "all_zero": false
+   },
+   "41.5-44": {
+    "peak_dbfs": -28.5,
+    "rms_dbfs": -47.3,
+    "all_zero": false
+   },
+   "46-51.3": {
+    "peak_dbfs": -14.4,
+    "rms_dbfs": -33.3,
+    "all_zero": false
+   },
+   "51.3-end": {
+    "peak_dbfs": null,
+    "rms_dbfs": null,
+    "all_zero": true
+   }
+  }
+ },
+ "duration_samples": 2518416,
+ "humanization": {
+  "params": {
+   "vel_rand": 8,
+   "lh_scale": 0.88,
+   "mel_over": 8,
+   "arch_lo": 0.86,
+   "arch_amp": 0.24,
+   "jitter_sigma_ms": 14.0,
+   "jitter_clip_ms": 20.0,
+   "spread_ms": [
+    5.0,
+    15.0
+   ],
+   "dur_scale": [
+    0.92,
+    1.08
+   ],
+   "legato_overlap_ms": [
+    20,
+    40
+   ],
+   "pedal_up_after_ms": [
+    0,
+    30
+   ],
+   "pedal_down_after_ms": [
+    80,
+    150
+   ],
+   "pedal_depth": [
+    92,
+    115
+   ]
+  },
+  "rubato_points": [
+   {
+    "boundary": 3.0,
+    "window_s": 1.5,
+    "peak_delay_ms": 60.0
+   },
+   {
+    "boundary": 8.0,
+    "window_s": 1.5,
+    "peak_delay_ms": 60.0
+   },
+   {
+    "boundary": 12.0,
+    "window_s": 1.5,
+    "peak_delay_ms": 55.0
+   },
+   {
+    "boundary": 15.0,
+    "window_s": 1.5,
+    "peak_delay_ms": 60.0
+   },
+   {
+    "boundary": 19.0,
+    "window_s": 1.5,
+    "peak_delay_ms": 65.0
+   },
+   {
+    "boundary": 29.5,
+    "window_s": 1.0,
+    "peak_delay_ms": 45.0
+   },
+   {
+    "boundary": 31.5,
+    "window_s": 1.0,
+    "peak_delay_ms": 45.0
+   },
+   {
+    "boundary": 33.5,
+    "window_s": 1.0,
+    "peak_delay_ms": 40.0
+   }
+  ],
+  "phrases": [
+   [
+    0,
+    3
+   ],
+   [
+    3,
+    8
+   ],
+   [
+    8,
+    12
+   ],
+   [
+    12,
+    15
+   ],
+   [
+    15,
+    19
+   ],
+   [
+    19,
+    22.45
+   ],
+   [
+    27,
+    29.5
+   ],
+   [
+    29.5,
+    31.5
+   ],
+   [
+    31.5,
+    33.5
+   ],
+   [
+    33.5,
+    36
+   ]
+  ],
+  "freeze_window": [
+   22.45,
+   25.3
+  ],
+  "seed": 20261114,
+  "stats": {
+   "velocity_local_std_vs_1s_neighbourhood": {
+    "B": 4.71,
+    "B2": 5.0
+   },
+   "n_piano_humanized": 119,
+   "n_piano_total": 160,
+   "velocity": {
+    "B_std": 10.06,
+    "B2_std": 10.74,
+    "B_range": [
+     19,
+     74
+    ],
+    "B2_range": [
+     21,
+     78
+    ],
+    "B2_LH_mean": 36.4,
+    "B2_RH_mean": 49.4,
+    "melody_over_chord_min": 8,
+    "melody_over_chord_mean": 15.9,
+    "B_LH_mean": 41.5,
+    "B_RH_mean": 47.6
+   },
+   "onset_jitter_ms": {
+    "std": 12.0,
+    "mean_abs": 10.5,
+    "p10_p90": [
+     -20.0,
+     14.7
+    ],
+    "max_abs": 20.0
+   },
+   "chord_spread_gap_ms": {
+    "n": 34,
+    "min": 5.2,
+    "max": 14.9,
+    "mean": 10.4
+   },
+   "total_offset_vs_score_ms": {
+    "std": 26.5,
+    "min": -25.0,
+    "max": 76.5
+   },
+   "rubato": {
+    "local_tempo_bpm_min": 55.58,
+    "local_tempo_bpm_max": 64.17,
+    "max_slowdown_pct": 7.4,
+    "max_speedup_pct": 7.0,
+    "drift_at_anchors_ms": {
+     "0.0": 0.0,
+     "9.6": 0.0,
+     "23.0": 0.0,
+     "27.0": 0.0,
+     "36.0": 0.0,
+     "41.5": 0.0,
+     "46.0": 0.0
+    },
+    "curve_every_0_25s": [
+     [
+      0.0,
+      60.0
+     ],
+     [
+      0.25,
+      60.0
+     ],
+     [
+      0.5,
+      60.0
+     ],
+     [
+      0.75,
+      60.0
+     ],
+     [
+      1.0,
+      60.0
+     ],
+     [
+      1.25,
+      60.0
+     ],
+     [
+      1.5,
+      59.6
+     ],
+     [
+      1.75,
+      58.82
+     ],
+     [
+      2.0,
+      58.06
+     ],
+     [
+      2.25,
+      57.32
+     ],
+     [
+      2.5,
+      56.6
+     ],
+     [
+      2.75,
+      55.9
+     ],
+     [
+      3.0,
+      60.98
+     ],
+     [
+      3.25,
+      62.76
+     ],
+     [
+      3.5,
+      63.83
+     ],
+     [
+      3.75,
+      63.83
+     ],
+     [
+      4.0,
+      62.76
+     ],
+     [
+      4.25,
+      60.98
+     ],
+     [
+      4.5,
+      60.0
+     ],
+     [
+      4.75,
+      60.0
+     ],
+     [
+      5.0,
+      60.0
+     ],
+     [
+      5.25,
+      60.0
+     ],
+     [
+      5.5,
+      60.0
+     ],
+     [
+      5.75,
+      60.0
+     ],
+     [
+      6.0,
+      60.0
+     ],
+     [
+      6.25,
+      60.0
+     ],
+     [
+      6.5,
+      59.6
+     ],
+     [
+      6.75,
+      58.82
+     ],
+     [
+      7.0,
+      58.06
+     ],
+     [
+      7.25,
+      57.32
+     ],
+     [
+      7.5,
+      56.6
+     ],
+     [
+      7.75,
+      55.9
+     ],
+     [
+      8.0,
+      60.98
+     ],
+     [
+      8.25,
+      62.76
+     ],
+     [
+      8.5,
+      63.83
+     ],
+     [
+      8.75,
+      63.83
+     ],
+     [
+      9.0,
+      62.76
+     ],
+     [
+      9.25,
+      60.98
+     ],
+     [
+      9.5,
+      60.0
+     ],
+     [
+      9.75,
+      60.0
+     ],
+     [
+      10.0,
+      60.0
+     ],
+     [
+      10.25,
+      60.0
+     ],
+     [
+      10.5,
+      59.64
+     ],
+     [
+      10.75,
+      58.92
+     ],
+     [
+      11.0,
+      58.22
+     ],
+     [
+      11.25,
+      57.54
+     ],
+     [
+      11.5,
+      56.87
+     ],
+     [
+      11.75,
+      56.22
+     ],
+     [
+      12.0,
+      60.9
+     ],
+     [
+      12.25,
+      62.52
+     ],
+     [
+      12.5,
+      63.49
+     ],
+     [
+      12.75,
+      63.49
+     ],
+     [
+      13.0,
+      62.52
+     ],
+     [
+      13.25,
+      60.9
+     ],
+     [
+      13.5,
+      59.6
+     ],
+     [
+      13.75,
+      58.82
+     ],
+     [
+      14.0,
+      58.06
+     ],
+     [
+      14.25,
+      57.32
+     ],
+     [
+      14.5,
+      56.6
+     ],
+     [
+      14.75,
+      55.9
+     ],
+     [
+      15.0,
+      60.98
+     ],
+     [
+      15.25,
+      62.76
+     ],
+     [
+      15.5,
+      63.83
+     ],
+     [
+      15.75,
+      63.83
+     ],
+     [
+      16.0,
+      62.76
+     ],
+     [
+      16.25,
+      60.98
+     ],
+     [
+      16.5,
+      60.0
+     ],
+     [
+      16.75,
+      60.0
+     ],
+     [
+      17.0,
+      60.0
+     ],
+     [
+      17.25,
+      60.0
+     ],
+     [
+      17.5,
+      59.57
+     ],
+     [
+      17.75,
+      58.73
+     ],
+     [
+      18.0,
+      57.91
+     ],
+     [
+      18.25,
+      57.11
+     ],
+     [
+      18.5,
+      56.34
+     ],
+     [
+      18.75,
+      55.58
+     ],
+     [
+      19.0,
+      61.06
+     ],
+     [
+      19.25,
+      63.0
+     ],
+     [
+      19.5,
+      64.17
+     ],
+     [
+      19.75,
+      64.17
+     ],
+     [
+      20.0,
+      63.0
+     ],
+     [
+      20.25,
+      61.06
+     ],
+     [
+      20.5,
+      60.0
+     ],
+     [
+      20.75,
+      60.0
+     ],
+     [
+      21.0,
+      60.0
+     ],
+     [
+      21.25,
+      60.0
+     ],
+     [
+      21.5,
+      60.0
+     ],
+     [
+      21.75,
+      60.0
+     ],
+     [
+      22.0,
+      60.0
+     ],
+     [
+      22.25,
+      60.0
+     ],
+     [
+      27.0,
+      60.0
+     ],
+     [
+      27.25,
+      60.0
+     ],
+     [
+      27.5,
+      60.0
+     ],
+     [
+      27.75,
+      60.0
+     ],
+     [
+      28.0,
+      60.0
+     ],
+     [
+      28.25,
+      60.0
+     ],
+     [
+      28.5,
+      59.33
+     ],
+     [
+      28.75,
+      58.04
+     ],
+     [
+      29.0,
+      56.8
+     ],
+     [
+      29.25,
+      55.62
+     ],
+     [
+      29.5,
+      61.62
+     ],
+     [
+      29.75,
+      64.08
+     ],
+     [
+      30.0,
+      64.08
+     ],
+     [
+      30.25,
+      61.62
+     ],
+     [
+      30.5,
+      59.33
+     ],
+     [
+      30.75,
+      58.04
+     ],
+     [
+      31.0,
+      56.8
+     ],
+     [
+      31.25,
+      55.62
+     ],
+     [
+      31.5,
+      61.62
+     ],
+     [
+      31.75,
+      64.08
+     ],
+     [
+      32.0,
+      64.08
+     ],
+     [
+      32.25,
+      61.62
+     ],
+     [
+      32.5,
+      59.41
+     ],
+     [
+      32.75,
+      58.25
+     ],
+     [
+      33.0,
+      57.14
+     ],
+     [
+      33.25,
+      56.07
+     ],
+     [
+      33.5,
+      61.44
+     ],
+     [
+      33.75,
+      63.6
+     ],
+     [
+      34.0,
+      63.6
+     ],
+     [
+      34.25,
+      61.44
+     ],
+     [
+      34.5,
+      60.0
+     ],
+     [
+      34.75,
+      60.0
+     ],
+     [
+      35.0,
+      60.0
+     ],
+     [
+      35.25,
+      60.0
+     ],
+     [
+      35.5,
+      60.0
+     ],
+     [
+      35.75,
+      60.0
+     ]
+    ]
+   }
+  }
+ }
+}

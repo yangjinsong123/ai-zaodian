@@ -2,8 +2,8 @@
 
     python snow.py song.wav                 # 输出 snow.mp4（1080×1920，30fps，带原音频）
     python snow.py song.wav --w 720 --h 1280 --out small.mp4
-    python snow.py 代码歌_-13LUFS.wav --notes notes.json      # 按音符表（每个音的时间、力度）落雪
-    python snow.py 代码歌_-13LUFS.wav --first-version          # 第一版参数：一个和弦就下成暴雪
+    python snow.py D4_配乐v2_B2_-14LUFS.wav --notes notes_B2.json   # 按音符表（每个音的时间、力度）落雪
+    python snow.py D4_配乐v2_B2_-14LUFS.wav --notes notes_B2.json --first-version   # 第一版参数：一个和弦就下成暴雪
 
 对应关系（全部从音频里算，不读乐谱，所以换成任何 WAV 都能下雪）：
   - 每个音的起音（频谱突然变强）→ 从夜空中段的“频谱带”上，按音高的位置落下一片雪；
@@ -18,8 +18,9 @@ from PIL import Image, ImageDraw, ImageFilter
 FPS = 30
 QUIET = 10 ** (-60 / 20)   # 帧 RMS 低于 -60 dBFS 算“没声音”
 HIGH_HZ = 480          # 起音里出现高于这个频率的音，就算“高音响起”
-NORMAL = dict(gain=1.1, cap=2, speed=1.0, note_flakes=1, size=1.0, deposit=1.0)       # 修好后的参数
-FIRST_VERSION = dict(gain=2400.0, cap=None, speed=4.4, note_flakes=40, size=3.6, deposit=1.5)   # 第一版：系数太大、没有上限、下得太快
+NOTE_DEPOSIT = 8.0     # 每个音落地时，在它音高对应的横向位置把雪地垫高多少像素（× 力度）；雪地就慢慢堆成这首歌的音高分布
+NORMAL = dict(gain=1.1, cap=2, speed=1.0, note_flakes=1, size=1.0, deposit=1.0, note_deposit=NOTE_DEPOSIT)       # 修好后的参数
+FIRST_VERSION = dict(gain=2400.0, cap=None, speed=4.4, note_flakes=40, size=3.0, deposit=1.5)   # 第一版：系数太大、没有上限、下得太快
 
 
 def load_notes(path):
@@ -64,6 +65,7 @@ class Analysis:
         else:
             for i in np.where(self.onset)[0]: self.events[i] = [(hz, 0.5) for hz in self.onset_pitches(i)]
         self.high_onset = np.array([any(hz >= HIGH_HZ for hz, _ in e) for e in self.events])
+        self.flash_level = self.high_onset.astype(np.float32)   # 每次闪光的亮度（0–1）；调用方可以改成只让最高的几个音闪、各自不同亮度
         # 64 段对数频带（画频谱带用）
         centers = np.geomspace(80, 2200, 64)
         self.bands = np.stack([np.interp(centers, freqs, np.convolve(row, np.ones(3) / 3, "same")) for row in S])
@@ -127,12 +129,23 @@ class Snow:
             for hz, vel in A.events[i]:                      # 每个音：从频谱带上、按音高的位置落雪；力度越大雪片越大
                 m = max(1, int(round(p["note_flakes"] * vel / 0.45)))
                 self._spawn(m, xs=[self.x_of(hz)] * m, y=self.band_y, layers=2, flash=6, scale=0.7 + vel)
+                if p.get("note_deposit"):                    # 这个音的雪落到地面那一帧（按近层雪的平均下落速度算），在同一横向位置堆一个小雪包
+                    x = self.x_of(hz); fall = (self.ground_y - self.ground[int(x)] - self.band_y) / (4.05 * self.k * p["speed"])
+                    self.pend = getattr(self, "pend", []) + [(i + max(1, int(round(fall))), x, p["note_deposit"] * self.k * vel)]
             want = p["gain"] * A.low[i]                      # 低音越响，天上飘下来的雪越多
             if p["cap"] is not None: want = min(want, p["cap"])
             self.acc = getattr(self, "acc", 0.0) + want
             m = int(self.acc); self.acc -= m; self._spawn(m)
-            if A.high_onset[i] and len(self.f):              # 高音：几片雪闪一下
-                idx = self.rng.choice(len(self.f), min(12, len(self.f)), replace=False); self.f[idx, 6] = 20
+            lv = float(getattr(A, "flash_level", A.high_onset)[i])
+            if lv > 0 and len(self.f):                       # 高音：几片雪闪一下（亮度和片数按 flash_level）
+                k = max(1, int(round(12 * lv)))
+                idx = self.rng.choice(len(self.f), min(k, len(self.f)), replace=False); self.f[idx, 6] = 20 * lv
+        pend = getattr(self, "pend", [])
+        if pend:
+            due = [q for q in pend if q[0] <= i]; self.pend = [q for q in pend if q[0] > i]
+            if due:
+                xx = np.arange(self.W)
+                for _, x, h in due: self.ground += h * np.exp(-0.5 * ((xx - x) / (22 * self.k)) ** 2)
         # 歌停了（连续 0.5 秒几乎无声）：不再有新雪，空中剩下的雪 1.5 秒内淡掉——“最后一个音停下，雪也停了”
         self.quiet = self.quiet + 1 if (i >= A.n or A.rms[i] < QUIET) else 0
         f = self.f
@@ -152,11 +165,15 @@ class Snow:
         """返回三层：背景（夜空+频谱带+远、中层雪）、近层雪、雪地（RGBA）"""
         W, H, k = self.W, self.H, self.k
         back = self.bg.copy().convert("RGBA"); d = ImageDraw.Draw(back, "RGBA")
-        if band and i < A.n:                                 # 频谱带：很淡的灰蓝
+        ba = getattr(self, "band_alpha", 1.0)                # 整条频谱带的淡出系数（1 = 原样；视频里最后一个音之后淡掉）
+        if band and i < A.n and ba > 0.004:                  # 频谱带：很淡的灰蓝
             bw = (W - 120 * k) / 64; v = A.bands[i]
+            ov = back if ba >= 1 else Image.new("RGBA", (W, H), (0, 0, 0, 0)); do = d if ba >= 1 else ImageDraw.Draw(ov)
             for j in range(64):
                 h = 4 * k + min(1.0, v[j]) * 120 * k; a = int(36 + 120 * min(1.0, v[j]))
-                x0 = 60 * k + j * bw; d.rectangle([x0, self.band_y - h / 2, x0 + bw - 3 * k, self.band_y + h / 2], fill=(96, 120, 160, a))
+                if ba < 1: a = int(255 * ba)                 # 注意：在 RGBA 图上直接画不会按 alpha 混合，所以淡出时画在透明层上再叠
+                x0 = 60 * k + j * bw; do.rectangle([x0, self.band_y - h / 2, x0 + bw - 3 * k, self.band_y + h / 2], fill=(96, 120, 160, a))
+            if ba < 1: back.alpha_composite(ov)
         sky = Image.new("RGBA", (W, H), (0, 0, 0, 0)); near = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         ds, dn = ImageDraw.Draw(sky), ImageDraw.Draw(near)
         for x, y, r, _, L, _, fl, life in self.f:
