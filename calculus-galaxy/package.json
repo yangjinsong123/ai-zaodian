@@ -1,0 +1,17 @@
+{
+  "name": "calculus-galaxy",
+  "version": "0.1.0",
+  "description": "一元微积分 3D 知识星图：JSON 驱动、力导向成团、可飞可点（Three.js）",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "check": "node tools/layout_check.mjs"
+  },
+  "dependencies": {
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
+  }
+}

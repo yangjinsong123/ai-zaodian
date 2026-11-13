@@ -1,0 +1,44 @@
+html,body{margin:0;height:100%;background:#020a1f;overflow:hidden;
+  font-family:"Noto Sans CJK SC","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:#fff;-webkit-font-smoothing:antialiased}
+#stage{position:fixed;inset:0}
+#stage canvas{display:block}
+.lbl-layer{position:fixed!important;inset:0;pointer-events:none}
+.chlabel{display:flex;flex-direction:column;align-items:center;padding:3px 12px 4px;border-radius:14px;white-space:nowrap;
+  background:rgba(2,6,23,.5);border:1.5px solid currentColor;text-shadow:0 0 10px currentColor}
+.chlabel b{font-size:27px;font-weight:900;letter-spacing:1px;line-height:1.2}
+.chlabel small{font-size:11.5px;font-weight:700;opacity:.85;line-height:1.2}
+.slabel{font-size:14.5px;font-weight:700;white-space:nowrap;color:#fff;text-shadow:0 0 4px #000,0 0 8px #000,0 1px 2px #000}
+.slabel.hard{color:#ffd1d1;text-shadow:0 0 4px #000,0 0 10px #ff3b3b,0 1px 2px #000}
+#hint{position:fixed;left:0;right:0;bottom:14px;text-align:center;font-size:13px;color:#cbd5e1;opacity:.85;pointer-events:none}
+body.record #hint{display:none}
+body.record.showhint #hint{display:block;bottom:auto;top:58px;font-size:14px;font-weight:700;color:#fff;text-shadow:0 0 6px #000}
+#tap{position:fixed;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:3px solid #fff;background:rgba(255,255,255,.25);
+  box-shadow:0 0 18px #fff;pointer-events:none;opacity:0;z-index:6}
+#leader{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:6;opacity:0}
+#leader line{stroke:#fff;stroke-width:1.6;stroke-dasharray:4 4}
+#leader circle{fill:none;stroke:#fff;stroke-width:2}
+#card{position:fixed;left:50%;top:var(--card-top,47%);width:min(440px,86vw);box-sizing:border-box;padding:14px 18px 16px;
+  border-radius:18px;background:rgba(6,12,34,.88);border:2px solid var(--cc,#7dd3fc);
+  box-shadow:0 0 26px color-mix(in srgb,var(--cc,#7dd3fc) 60%,transparent),inset 0 0 30px rgba(255,255,255,.04);
+  transform-origin:50% 0;transform:translateX(-50%) scale(.6);opacity:0;pointer-events:none;z-index:7}
+#card.open{pointer-events:auto}
+#card.hard{--cc:#ff4d4d}
+.c-chap{display:inline-block;font-size:12.5px;font-weight:800;color:#000;background:var(--cc,#7dd3fc);padding:2px 9px;border-radius:9px}
+.c-title{font-size:28px;font-weight:900;margin:6px 0 8px;line-height:1.2;text-shadow:0 0 12px var(--cc,#7dd3fc)}
+.c-bullets{margin:0;padding-left:20px;font-size:17px;font-weight:500;line-height:1.55;color:#e2e8f0}
+.c-bullets li{margin-bottom:3px}
+.c-bullets li::marker{color:var(--cc,#7dd3fc)}
+.c-close{position:absolute;right:12px;top:8px;font-size:22px;color:#94a3b8;cursor:pointer}
+body.record .c-close{display:none}
+#cursor{position:fixed;left:0;top:0;z-index:9;pointer-events:none;opacity:0;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6))}
+#cursor svg{position:absolute;left:-3px;top:-2px}
+#cursor .wheel{position:absolute;left:22px;top:22px;width:22px;height:34px;border:2.5px solid #fff;border-radius:11px;opacity:0;box-shadow:0 0 6px #000}
+#cursor .wheel::after{content:"";position:absolute;left:8px;top:var(--wy,5px);width:4px;height:9px;border-radius:2px;background:#fff}
+#cursor.drag svg path{fill:#fde047}
+#code{position:fixed;inset:0;z-index:8;background:#0b1020;display:none;overflow:hidden}
+#code .tab{position:absolute;left:0;top:0;right:0;height:38px;background:#151b2e;border-bottom:1px solid #263049;font:700 14px "DejaVu Sans Mono","Noto Sans CJK SC",monospace;color:#cbd5e1;padding:10px 16px;box-sizing:border-box}
+#code .tab::before{content:"{ } ";color:#facc15}
+#code .src{position:absolute;left:0;right:0;top:38px;margin:0;padding:10px 0;font:500 15px/24px "DejaVu Sans Mono","Noto Sans CJK SC",monospace;color:#e2e8f0;white-space:pre;transform-origin:0 0}
+#code .ln{display:inline-block;width:38px;text-align:right;color:#475569;margin-right:12px}
+#code .k{color:#7dd3fc}#code .s{color:#fca5a5}#code .b{color:#c4b5fd}#code .p{color:#94a3b8}
+#code .hl{background:rgba(250,204,21,.18);outline:2px solid #facc15;border-radius:4px}

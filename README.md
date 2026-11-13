@@ -10,5 +10,6 @@
 | [snow-song](snow-song/) | 用 numpy 一个音一个音合成一首钢琴曲，并让它在屏幕里下一场雪 |
 | [example-meteor-shower](example-meteor-shower/) | 没有显卡、只给模型进程断网，本地小模型 Qwen2.5-1.5B 写的 30 条四六级例句做成流星雨动画，附测速日志 |
 | [spectrum-city](spectrum-city/) | 把一首歌变成会跟着鼓点跳的 3D 频谱城市，64 栋楼对应 64 段频率，Three.js + numpy |
+| [calculus-galaxy](calculus-galaxy/) | 把一门微积分课变成能飞进去的 3D 知识星图，Three.js |
 
 以后的工具会以新的顶层文件夹加进来。

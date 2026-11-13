@@ -1,0 +1,14 @@
+{
+ "_说明": "翻车 → 调参散开 对比片段。0~2.5s：repulsion=low（排斥力 0.06，挤成一团、标签叠在一起，无标签避让）；2.5s 起同一套代码把 repulsion 改回 normal(60)，力导向按每帧 2 步确定性推进，星团散开。",
+ "duration": 6.0, "fps": 30,
+ "shots": [
+  {"name": "F1_翻车_挤成一团", "t0": 0.0, "t1": 2.5, "ease": "linear", "punch": 0, "layout": "low", "declutter": false, "labelFar": 400, "shake": 3,
+   "orbit": {"center": "galaxy", "a": [0.0, 0.18], "r": [78, 72], "h": [0, 0]}},
+  {"name": "F2_调参散开", "t0": 2.5, "t1": 6.0, "ease": "out", "punch": 0, "layout": {"from": "low", "to": "normal", "t0": 2.5, "spf": 2}, "declutter": false, "labelFar": 400,
+   "orbit": {"center": "galaxy", "a": [0.18, 0.3], "r": [72, 255], "h": [0, 8]}}
+ ],
+ "subs": [
+  {"a": 0.0, "b": 2.5, "text": "排斥力太小 全挤成一团"},
+  {"a": 2.5, "b": 6.0, "text": "调大排斥力 散开成5团"}
+ ]
+}
