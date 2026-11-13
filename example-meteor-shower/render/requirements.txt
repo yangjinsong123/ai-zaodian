@@ -1,0 +1,3 @@
+numpy>=1.24
+Pillow>=10.1
+# 导出 mp4 另需系统里的 ffmpeg（不装也行：加 --frames 导出 PNG 帧）

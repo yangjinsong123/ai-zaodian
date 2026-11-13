@@ -1,0 +1,18 @@
+### 宿主网络检查 2026-11-13 02:22:06 CST — 测之前
+enp0s3           UP             <IP> <IPv6> 
+docker0          DOWN           <IP> 
+default via <IP> dev enp0s3 
+https://www.baidu.com → HTTP 200
+https://huggingface.co → HTTP 200
+### 宿主网络检查 2026-11-13 02:22:15 CST — 测试进行中
+enp0s3           UP             <IP> <IPv6> 
+docker0          DOWN           <IP> 
+default via <IP> dev enp0s3 
+https://www.baidu.com → HTTP 200
+https://huggingface.co → HTTP 200
+### 宿主网络检查 2026-11-13 02:22:22 CST — 测完
+enp0s3           UP             <IP> <IPv6> 
+docker0          DOWN           <IP> 
+default via <IP> dev enp0s3 
+https://www.baidu.com → HTTP 200
+https://huggingface.co → HTTP 200

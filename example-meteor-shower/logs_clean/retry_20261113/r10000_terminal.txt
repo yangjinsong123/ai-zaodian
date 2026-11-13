@@ -1,0 +1,3 @@
+[batch] priority: The doctor gave me priority over the other patients to attend to my urgent health concerns first.  | {'首字等待_s（请求发出→第一个字到达，墙钟）': 2.219, '总耗时_s（墙钟）': 2.947, 'load_duration_s（Ollama 自报：加载模型）': 2.062, 'prompt_eval': [57, 0.134], 'eval_count': 19, 'eval_duration_s': 0.735, 'token_per_s（Ollama 自报 eval_count/eval_duration）': 25.86}
+[batch] reluctant: I was reluctant to lend you my car, but I figured it was for a short trip.  | {'首字等待_s（请求发出→第一个字到达，墙钟）': 0.1, '总耗时_s（墙钟）': 0.673, 'load_duration_s（Ollama 自报：加载模型）': 0.001, 'prompt_eval': [59, 0.094], 'eval_count': 20, 'eval_duration_s': 0.573, 'token_per_s（Ollama 自报 eval_count/eval_duration）': 34.9}
+done 2026-11-13T03:06:19.789+08:00

@@ -8,5 +8,6 @@
 | [kebiao-to-calendar](https://github.com/yangjinsong123/kebiao-to-calendar) | 课表截图导入手机日历，独立仓库：https://github.com/yangjinsong123/kebiao-to-calendar |
 | [cet-countdown-words](cet-countdown-words/) | 900 个四六级单词拼成的倒计时锁屏壁纸，可自己改数字重新生成 |
 | [snow-song](snow-song/) | 用 numpy 一个音一个音合成一首钢琴曲，并让它在屏幕里下一场雪 |
+| [example-meteor-shower](example-meteor-shower/) | 没有显卡、只给模型进程断网，本地小模型 Qwen2.5-1.5B 写的 30 条四六级例句做成流星雨动画，附测速日志 |
 
 以后的工具会以新的顶层文件夹加进来。

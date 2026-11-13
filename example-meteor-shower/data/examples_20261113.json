@@ -1,0 +1,702 @@
+{
+ "meta": {
+  "model": "Qwen2.5-1.5B-Instruct Q4_K_M（GGUF，Apache-2.0），Ollama 0.40.16（MIT）",
+  "prompt": "Write one short, natural English example sentence (8 to 15 words) using the word \"{w}\". Reply with the sentence only.",
+  "options": "temperature 0.7，num_predict 64，每句固定随机种子（见 all_outputs）",
+  "环境": "云电脑 8 核 Intel Xeon、无显卡；模型进程在单独的网络命名空间里运行（unshare -rn），里面只有回环网卡，访问外网失败，见 logs/*/netns_status.txt",
+  "核对": "sentence 是模型原始输出，一个字没改（包括模型自己加的引号）。是否采用由制作（AI 代理）按本脚本顶部的标准判断，未经真人核对。",
+  "生成时间": "2026-11-13 02:22–03:06（北京时间）"
+ },
+ "examples": [
+  {
+   "word": "persist",
+   "cn": "坚持；持续",
+   "sentence": "The old tree persisted despite the weather, standing tall and proud.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5000",
+   "all_outputs": [
+    {
+     "text": "The persistent rain kept me from going out for a walk.",
+     "log": "logs/film_20261113/raw_cold.jsonl",
+     "tag": "cold",
+     "seed": 1115,
+     "sent_at": "2026-11-13T01:51:08.021+08:00",
+     "adopted": false,
+     "note": "冷启动测速那一句：用的是派生词 persistent，不是 persist 本身"
+    },
+    {
+     "text": "\"I decided to persist with the project, even when things got tough.\"",
+     "log": "logs/film_20261113/raw_live.jsonl",
+     "tag": "live",
+     "seed": 9115,
+     "sent_at": "2026-11-13T01:51:12.074+08:00",
+     "adopted": false,
+     "note": "第 9 镜现场演示这一句（可用）；流星雨里用 batch 那一句"
+    },
+    {
+     "text": "The old tree persisted despite the weather, standing tall and proud.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5000,
+     "sent_at": "2026-11-13T02:22:08.176+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "abandon",
+   "cn": "放弃；抛弃",
+   "sentence": "I decided to abandon my old life and start anew.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5001",
+   "all_outputs": [
+    {
+     "text": "I decided to abandon my old life and start anew.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5001,
+     "sent_at": "2026-11-13T02:22:12.484+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "accomplish",
+   "cn": "完成；做成",
+   "sentence": "I accomplished my goal of learning a new language in just a few months.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5002",
+   "all_outputs": [
+    {
+     "text": "I accomplished my goal of learning a new language in just a few months.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5002,
+     "sent_at": "2026-11-13T02:22:12.811+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "adapt",
+   "cn": "适应；改编",
+   "sentence": "I had to adapt my plans to fit the changing circumstances.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5003",
+   "all_outputs": [
+    {
+     "text": "I had to adapt my plans to fit the changing circumstances.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5003,
+     "sent_at": "2026-11-13T02:22:13.337+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "anxiety",
+   "cn": "焦虑；担心",
+   "sentence": "I'm feeling a lot of anxiety about the upcoming job interview tomorrow.",
+   "adopted_from": "logs/retry_20261113/r8000/raw_batch.jsonl · seed 8004",
+   "all_outputs": [
+    {
+     "text": "I'm feeling anxious about the upcoming big presentation at work.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5004,
+     "sent_at": "2026-11-13T02:22:13.661+08:00",
+     "adopted": false,
+     "note": "没用到 anxiety：写成了形容词 anxious"
+    },
+    {
+     "text": "I feel anxious about the upcoming presentation.",
+     "log": "logs/retry_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 6004,
+     "sent_at": "2026-11-13T02:23:03.403+08:00",
+     "adopted": false,
+     "note": "没用到 anxiety（anxious）"
+    },
+    {
+     "text": "I feel anxious about the upcoming job interview tomorrow.",
+     "log": "logs/retry_20261113/r2/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 7004,
+     "sent_at": "2026-11-13T02:23:09.187+08:00",
+     "adopted": false,
+     "note": "没用到 anxiety（anxious）"
+    },
+    {
+     "text": "I'm feeling a lot of anxiety about the upcoming job interview tomorrow.",
+     "log": "logs/retry_20261113/r8000/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 8004,
+     "sent_at": "2026-11-13T02:23:26.049+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "appreciate",
+   "cn": "感激；欣赏",
+   "sentence": "I appreciate the kindness shown to me by everyone at the party.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5005",
+   "all_outputs": [
+    {
+     "text": "I appreciate the kindness shown to me by everyone at the party.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5005,
+     "sent_at": "2026-11-13T02:22:14.010+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "approach",
+   "cn": "方法；接近",
+   "sentence": "She approached the desk to gather her things for the meeting.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5006",
+   "all_outputs": [
+    {
+     "text": "She approached the desk to gather her things for the meeting.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5006,
+     "sent_at": "2026-11-13T02:22:14.426+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "assume",
+   "cn": "假定；认为",
+   "sentence": "I assumed everyone was here when I arrived at the party.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5007",
+   "all_outputs": [
+    {
+     "text": "I assumed everyone was here when I arrived at the party.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5007,
+     "sent_at": "2026-11-13T02:22:14.734+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "available",
+   "cn": "可用的；有空的",
+   "sentence": "The computer is available for use right now.",
+   "adopted_from": "logs/retry_20261113/r2/raw_batch.jsonl · seed 7008",
+   "all_outputs": [
+    {
+     "text": "The weather is finally available for outdoor activities.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5008,
+     "sent_at": "2026-11-13T02:22:15.040+08:00",
+     "adopted": false,
+     "note": "语义不通：天气不能 available"
+    },
+    {
+     "text": "I can recommend a great book on the available topics.",
+     "log": "logs/retry_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 6008,
+     "sent_at": "2026-11-13T02:23:05.997+08:00",
+     "adopted": false,
+     "note": "搭配别扭：recommend a book on the available topics"
+    },
+    {
+     "text": "The computer is available for use right now.",
+     "log": "logs/retry_20261113/r2/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 7008,
+     "sent_at": "2026-11-13T02:23:11.088+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "benefit",
+   "cn": "好处；受益",
+   "sentence": "Using the Internet has greatly benefited my ability to stay connected with friends and family.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5009",
+   "all_outputs": [
+    {
+     "text": "Using the Internet has greatly benefited my ability to stay connected with friends and family.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5009,
+     "sent_at": "2026-11-13T02:22:15.277+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "challenge",
+   "cn": "挑战",
+   "sentence": "I challenged my friends to a game of chess, but they all lost.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5010",
+   "all_outputs": [
+    {
+     "text": "I challenged my friends to a game of chess, but they all lost.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5010,
+     "sent_at": "2026-11-13T02:22:15.655+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "consequence",
+   "cn": "结果；后果",
+   "sentence": "The long hours at work led to a significant weight gain as a consequence.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5011",
+   "all_outputs": [
+    {
+     "text": "The long hours at work led to a significant weight gain as a consequence.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5011,
+     "sent_at": "2026-11-13T02:22:16.033+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "contribute",
+   "cn": "贡献；促成",
+   "sentence": "I contribute my time and effort to the community, making it a better place for everyone.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5012",
+   "all_outputs": [
+    {
+     "text": "I contribute my time and effort to the community, making it a better place for everyone.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5012,
+     "sent_at": "2026-11-13T02:22:16.418+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "convince",
+   "cn": "说服；使相信",
+   "sentence": "I convinced my skeptical friend to try the new restaurant.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5013",
+   "all_outputs": [
+    {
+     "text": "I convinced my skeptical friend to try the new restaurant.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5013,
+     "sent_at": "2026-11-13T02:22:16.886+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "decline",
+   "cn": "下降；婉拒",
+   "sentence": "The demand for eco-friendly products has declined significantly over the past year.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5014",
+   "all_outputs": [
+    {
+     "text": "The demand for eco-friendly products has declined significantly over the past year.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5014,
+     "sent_at": "2026-11-13T02:22:17.157+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "efficient",
+   "cn": "高效的",
+   "sentence": "The efficient use of resources led to a significant reduction in costs.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5015",
+   "all_outputs": [
+    {
+     "text": "The efficient use of resources led to a significant reduction in costs.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5015,
+     "sent_at": "2026-11-13T02:22:17.502+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "emphasize",
+   "cn": "强调",
+   "sentence": "I emphasized the importance of early intervention in addressing the child's behavior issues.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5016",
+   "all_outputs": [
+    {
+     "text": "I emphasized the importance of early intervention in addressing the child's behavior issues.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5016,
+     "sent_at": "2026-11-13T02:22:17.845+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "enormous",
+   "cn": "巨大的",
+   "sentence": "The enormous size of the desert required extensive resources for its preservation.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5017",
+   "all_outputs": [
+    {
+     "text": "The enormous size of the desert required extensive resources for its preservation.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5017,
+     "sent_at": "2026-11-13T02:22:18.206+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "essential",
+   "cn": "必不可少的",
+   "sentence": "\"Water is essential for all living organisms to survive.\"",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5018",
+   "all_outputs": [
+    {
+     "text": "\"Water is essential for all living organisms to survive.\"",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5018,
+     "sent_at": "2026-11-13T02:22:18.509+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "evaluate",
+   "cn": "评估",
+   "sentence": "The teacher asked the students to evaluate the effectiveness of the new teaching method.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5019",
+   "all_outputs": [
+    {
+     "text": "The teacher asked the students to evaluate the effectiveness of the new teaching method.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5019,
+     "sent_at": "2026-11-13T02:22:18.784+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "flexible",
+   "cn": "灵活的",
+   "sentence": "I found that flexible scheduling worked well for accommodating my part-time job and personal commitments.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5020",
+   "all_outputs": [
+    {
+     "text": "I found that flexible scheduling worked well for accommodating my part-time job and personal commitments.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5020,
+     "sent_at": "2026-11-13T02:22:19.127+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "generate",
+   "cn": "产生；生成",
+   "sentence": "\"Let's generate some new ideas for our project presentation tomorrow.\"",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5021",
+   "all_outputs": [
+    {
+     "text": "\"Let's generate some new ideas for our project presentation tomorrow.\"",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5021,
+     "sent_at": "2026-11-13T02:22:19.538+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "guarantee",
+   "cn": "保证",
+   "sentence": "The insurance company guarantees that my new car will be fully covered in case of any accident.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5022",
+   "all_outputs": [
+    {
+     "text": "The insurance company guarantees that my new car will be fully covered in case of any accident.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5022,
+     "sent_at": "2026-11-13T02:22:19.909+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "maintain",
+   "cn": "保持；维护",
+   "sentence": "The old tree needed to be maintained regularly to keep it healthy.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5023",
+   "all_outputs": [
+    {
+     "text": "The old tree needed to be maintained regularly to keep it healthy.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5023,
+     "sent_at": "2026-11-13T02:22:20.439+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "obvious",
+   "cn": "明显的",
+   "sentence": "The answer was obvious: he had been late again.",
+   "adopted_from": "logs/retry_20261113/raw_batch.jsonl · seed 6024",
+   "all_outputs": [
+    {
+     "text": "You can tell from the obvious sign at the entrance.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5024,
+     "sent_at": "2026-11-13T02:22:20.758+08:00",
+     "adopted": false,
+     "note": "语义不完整：没有说明能看出什么"
+    },
+    {
+     "text": "The answer was obvious: he had been late again.",
+     "log": "logs/retry_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 6024,
+     "sent_at": "2026-11-13T02:23:06.551+08:00",
+     "adopted": true,
+     "note": "采用"
+    },
+    {
+     "text": "The answer is obvious: it's spelled with the letter 'o'.",
+     "log": "logs/retry_20261113/r2/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 7024,
+     "sent_at": "2026-11-13T02:23:11.625+08:00",
+     "adopted": false,
+     "note": "语义别扭：spelled with the letter 'o'"
+    }
+   ]
+  },
+  {
+   "word": "potential",
+   "cn": "潜力；潜在的",
+   "sentence": "The project has great potential for growth.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5025",
+   "all_outputs": [
+    {
+     "text": "The project has great potential for growth.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5025,
+     "sent_at": "2026-11-13T02:22:21.031+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "priority",
+   "cn": "优先事项",
+   "sentence": "I gave my work the highest priority in my schedule this week.",
+   "adopted_from": "logs/retry_20261113/r9000/raw_batch.jsonl · seed 9026",
+   "all_outputs": [
+    {
+     "text": "I have to prioritize my work over my family time to meet important deadlines.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5026,
+     "sent_at": "2026-11-13T02:22:21.241+08:00",
+     "adopted": false,
+     "note": "没用到 priority：写成了动词 prioritize"
+    },
+    {
+     "text": "As the project deadline approached, our team prioritized completing the last critical module.",
+     "log": "logs/retry_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 6026,
+     "sent_at": "2026-11-13T02:23:07.067+08:00",
+     "adopted": false,
+     "note": "没用到 priority（prioritized）"
+    },
+    {
+     "text": "As a teacher, John places a high priority on ensuring all students understand the material before moving on to more advanced topics.",
+     "log": "logs/retry_20261113/r2/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 7026,
+     "sent_at": "2026-11-13T02:23:12.438+08:00",
+     "adopted": false,
+     "note": "出现人名 John，不用"
+    },
+    {
+     "text": "I have to park my car in the garage first, then make sure all the other tasks are done before I take a shower.",
+     "log": "logs/retry_20261113/r8000/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 8026,
+     "sent_at": "2026-11-13T02:23:27.596+08:00",
+     "adopted": false,
+     "note": "没用到 priority，语义也不通"
+    },
+    {
+     "text": "I gave my work the highest priority in my schedule this week.",
+     "log": "logs/retry_20261113/r9000/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 9026,
+     "sent_at": "2026-11-13T03:06:07.286+08:00",
+     "adopted": true,
+     "note": "采用"
+    },
+    {
+     "text": "The doctor gave me priority over the other patients to attend to my urgent health concerns first.",
+     "log": "logs/retry_20261113/r10000/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 10026,
+     "sent_at": "2026-11-13T03:06:16.167+08:00",
+     "adopted": false,
+     "note": "可用，备选（句子偏长）"
+    }
+   ]
+  },
+  {
+   "word": "reluctant",
+   "cn": "不情愿的",
+   "sentence": "I was reluctant to ask for help because I didn't want to seem weak.",
+   "adopted_from": "logs/retry_20261113/r9000/raw_batch.jsonl · seed 9027",
+   "all_outputs": [
+    {
+     "text": "I'm being quite reluctant to make that phone call, as I know it'll be tough.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5027,
+     "sent_at": "2026-11-13T02:22:21.617+08:00",
+     "adopted": false,
+     "note": "语法别扭：I'm being quite reluctant"
+    },
+    {
+     "text": "I was reluctantly forced to eat my vegetables, as I didn't like them.",
+     "log": "logs/retry_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 6027,
+     "sent_at": "2026-11-13T02:23:07.790+08:00",
+     "adopted": false,
+     "note": "没用到 reluctant：写成了副词 reluctantly"
+    },
+    {
+     "text": "I was reluctantly forced to eat my vegetables today, even though I didn't like them.",
+     "log": "logs/retry_20261113/r2/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 7027,
+     "sent_at": "2026-11-13T02:23:13.138+08:00",
+     "adopted": false,
+     "note": "没用到 reluctant（reluctantly）"
+    },
+    {
+     "text": "I was reluctant to ask for help because I didn't want to seem weak.",
+     "log": "logs/retry_20261113/r9000/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 9027,
+     "sent_at": "2026-11-13T03:06:12.452+08:00",
+     "adopted": true,
+     "note": "采用"
+    },
+    {
+     "text": "I was reluctant to lend you my car, but I figured it was for a short trip.",
+     "log": "logs/retry_20261113/r10000/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 10027,
+     "sent_at": "2026-11-13T03:06:19.115+08:00",
+     "adopted": false,
+     "note": "可用，备选（lend you my car 语境稍别扭）"
+    }
+   ]
+  },
+  {
+   "word": "sufficient",
+   "cn": "足够的",
+   "sentence": "I have sufficient time to complete all my tasks today.",
+   "adopted_from": "logs/retry_20261113/r2/raw_batch.jsonl · seed 7028",
+   "all_outputs": [
+    {
+     "text": "The computer has enough memory to run the software without any issues.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5028,
+     "sent_at": "2026-11-13T02:22:22.067+08:00",
+     "adopted": false,
+     "note": "没用到 sufficient：写成了 enough"
+    },
+    {
+     "text": "The book is sufficient for the student's needs.",
+     "log": "logs/retry_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 6028,
+     "sent_at": "2026-11-13T02:23:08.533+08:00",
+     "adopted": false,
+     "note": "可用，备选（不如 7028 自然）"
+    },
+    {
+     "text": "I have sufficient time to complete all my tasks today.",
+     "log": "logs/retry_20261113/r2/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 7028,
+     "sent_at": "2026-11-13T02:23:13.902+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  },
+  {
+   "word": "tendency",
+   "cn": "倾向；趋势",
+   "sentence": "I have a tendency to prefer sunny days over rainy ones.",
+   "adopted_from": "logs/batch_20261113/raw_batch.jsonl · seed 5029",
+   "all_outputs": [
+    {
+     "text": "I have a tendency to prefer sunny days over rainy ones.",
+     "log": "logs/batch_20261113/raw_batch.jsonl",
+     "tag": "batch",
+     "seed": 5029,
+     "sent_at": "2026-11-13T02:22:22.400+08:00",
+     "adopted": true,
+     "note": "采用"
+    }
+   ]
+  }
+ ]
+}

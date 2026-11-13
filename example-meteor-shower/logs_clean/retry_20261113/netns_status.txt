@@ -1,0 +1,17 @@
+### 网络状态（命名空间内，2026-11-13 02:23:03 CST）
+$ lscpu | grep -E "Model name|^CPU\(s\)"
+CPU(s):                                  8
+Model name:                              Intel(R) Xeon(R) Processor
+$ ls /dev/nvidia*
+ls: cannot access '/dev/nvidia*': No such file or directory
+$ ip -br link
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP> 
+$ ip route
+(没有默认路由)
+$ curl -m 5 -sS https://www.baidu.com -o /dev/null
+curl: (6) Could not resolve host: www.baidu.com
+→ 访问失败：外网不通
+$ curl -m 5 -sS https://huggingface.co -o /dev/null
+curl: (6) Could not resolve host: huggingface.co
+→ 访问失败：外网不通
+ollama {"version":"0.40.16"}
