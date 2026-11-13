@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>spectrum city</title>
+<style>html,body{margin:0;background:#04060f;overflow:hidden;font-family:sans-serif}canvas{display:block}#ui{position:fixed;left:12px;bottom:12px;color:#cfd8ff;font-size:14px}</style></head>
+<body><div id="ui"></div>
+<script type="importmap">{"imports":{"three":"./three.module.js"}}</script>
+<script type="module">
+// 3D 频谱城市（MIT）。参数：?data=spectrum.json&mode=proc|raw|step1|step2&audio=song.wav&w=1080&h=1920
+//   mode=raw 就是「翻车版」：线性分段、不压缩、不平滑（低音那一栋会冲出画面——只有 raw 模式允许它出画）。
+//   有 audio 时点一下页面开始播放，楼高按 audio.currentTime 取对应帧；没有 audio 时给离线渲染用：window.renderFrame(i)。
+import * as THREE from 'three';
+const Q = new URLSearchParams(location.search);
+const W = +(Q.get('w') || 1080), H = +(Q.get('h') || 1920), FPS_ = null, MODE = Q.get('mode') || 'proc';
+const D = await (await fetch(Q.get('data') || 'spectrum.json')).json(); const FPS = D.fps;
+const NB = D.bands, SP = 2.5, FOOT = 1.7, TOPPX = 70;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(W, H); renderer.setPixelRatio(1); renderer.autoClear = false; renderer.setScissorTest(true);
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.fog = new THREE.FogExp2(0x060a1c, 0.012);
+const camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 600);
+// ---------- 颜色：低音暖 → 高音冷 ----------
+const PAL = [[1.0, 0.33, 0.20], [1.0, 0.24, 0.62], [0.66, 0.36, 1.0], [0.24, 0.55, 1.0], [0.20, 0.98, 1.0]];
+function bandColor(b) { const u = b / (NB - 1) * (PAL.length - 1), k = Math.min(PAL.length - 2, Math.floor(u)), f = u - k;
+  return new THREE.Color(...PAL[k].map((v, j) => v + (PAL[k + 1][j] - v) * f)); }
+// ---------- 楼：竖向渐变 + 横向窗带 + 扫光；楼顶灯单独一块 ----------
+const vs = `varying vec3 vP; varying vec3 vN; void main(){ vec4 w = modelMatrix*vec4(position,1.0); vP = w.xyz; vN = normalize(mat3(modelMatrix)*normal); gl_Position = projectionMatrix*viewMatrix*w; }`;
+const fs = `uniform vec3 uC; uniform float uH; uniform float uGlow; uniform float uSweep; uniform float uAlpha; uniform float uRefl; uniform float uLvl; varying vec3 vP; varying vec3 vN;
+ void main(){ float y = uRefl > 0.5 ? -vP.y : vP.y; float r = clamp(y/max(uH,0.01),0.0,1.0);
+  float win = step(0.55, fract(y*1.6)) * step(0.18, fract(vP.x*1.3+vP.z*1.3)) ;
+  vec3 c = uC*(0.08+0.42*r) + uC*win*(0.18+0.32*uLvl);
+  float side = abs(vN.y) > 0.5 ? 0.9 : (0.70 + 0.30*abs(vN.x));
+  c *= side;
+  float sw = exp(-pow((r-uSweep)*9.0,2.0)); c += mix(uC, vec3(1.0), 0.4)*sw*0.55;
+  c *= uGlow*(0.75+0.45*uLvl); c = min(c, vec3(1.0));
+  gl_FragColor = vec4(c, uAlpha); }`;
+const geo = new THREE.BoxGeometry(1, 1, 1); geo.translate(0, 0.5, 0);
+const edgeGeo = new THREE.EdgesGeometry(geo);
+const capGeo = new THREE.BoxGeometry(1, 0.06, 1); capGeo.translate(0, 0.03, 0);
+const B = [];
+function mkBuilding(b, refl) {
+  const col = bandColor(b);
+  const mat = new THREE.ShaderMaterial({ vertexShader: vs, fragmentShader: fs, transparent: refl, depthWrite: !refl,
+    uniforms: { uC: { value: col }, uH: { value: 1 }, uGlow: { value: 1 }, uSweep: { value: -1 }, uAlpha: { value: refl ? 0.22 : 1 }, uRefl: { value: refl ? 1 : 0 }, uLvl: { value: 0.5 } } });
+  const m = new THREE.Mesh(geo, mat);
+  const e = new THREE.LineSegments(edgeGeo, new THREE.LineBasicMaterial({ color: col.clone().lerp(new THREE.Color(1, 1, 1), 0.45), transparent: true, opacity: refl ? 0.18 : 0.9 }));
+  const cap = new THREE.Mesh(capGeo, new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: refl ? 0.15 : 1 }));
+  const g = new THREE.Group(); g.add(m, e, cap); if (refl) g.scale.y = -1; scene.add(g);
+  return { g, m, e, cap, col };
+}
+for (let b = 0; b < NB; b++) B.push({ main: mkBuilding(b, false), refl: mkBuilding(b, true) });
+// 地面：半透明深色（下面那套镜像楼透出来 = 倒影）+ 霓虹网格
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), new THREE.MeshBasicMaterial({ color: 0x070b1a, transparent: true, opacity: 0.80, depthWrite: false }));
+ground.rotation.x = -Math.PI / 2; ground.renderOrder = 1; scene.add(ground);
+const grid = new THREE.GridHelper(200, 80, 0x2a4a80, 0x16264a); grid.position.y = 0.01; grid.material.transparent = true; grid.material.opacity = 0.55; scene.add(grid);
+{ const n = 900, p = new Float32Array(n * 3); let s = 1116; const R = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < n; i++) { const a = R() * Math.PI * 2, el = 0.12 + R() * 1.2, r = 260; p[i * 3] = r * Math.cos(a) * Math.cos(el); p[i * 3 + 1] = r * Math.sin(el); p[i * 3 + 2] = r * Math.sin(a) * Math.cos(el); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(p, 3));
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({ size: 1.3, color: 0xaad4ff, transparent: true, opacity: 0.8, fog: false }))); }
+// 冲击波环（第 0 帧、18.000、40.000 的重击）
+const ring = new THREE.Mesh(new THREE.RingGeometry(0.96, 1.0, 96), new THREE.MeshBasicMaterial({ color: 0xffe9c0, transparent: true, opacity: 0, side: THREE.DoubleSide, depthWrite: false }));
+ring.rotation.x = -Math.PI / 2; ring.position.y = 0.05; scene.add(ring);
+
+const HS_ = D[MODE].h; const side = Math.sqrt(NB) | 0;
+const gridPos = b => { const r = Math.floor(b / side), c = b % side; return [(r - (side - 1) / 2) * SP, (c - (side - 1) / 2) * SP]; };
+const placement = b => { const [x, z] = gridPos(b); return { x, z, w: FOOT }; };
+const L = (a, b, u) => a + (b - a) * u;
+// 镜头：绕城慢慢转一圈（60 s 一圈），高度随时间轻微起伏
+const camAt = i => { const t = i / FPS, a = t / 60 * Math.PI * 2; return { p: [30 * Math.sin(a), 16 + 3 * Math.sin(t * 0.3), 30 * Math.cos(a)], l: [0, 3, 0], fov: 58 }; };
+function setCam(c, vp) { camera.fov = c.fov; camera.aspect = vp[2] / vp[3]; camera.position.set(...c.p); camera.up.set(0, 1, 0); camera.lookAt(...c.l); camera.updateProjectionMatrix(); camera.updateMatrixWorld(); }
+const EDG = [[0,1],[1,3],[3,2],[2,0],[4,5],[5,7],[7,6],[6,4],[0,4],[1,5],[2,6],[3,7]];
+const VS = Array.from({ length: 8 }, () => new THREE.Vector3()), PT = new THREE.Vector3();
+function topCheck(v, i, HS, h) {      // 返回 [这一帧画内楼顶离上缘最近的像素, 是哪一栋]；负数 = 楼顶出画。楼盒 12 条棱先按近裁剪面裁掉镜头背后的部分再投影（贴着镜头的楼也算对）
+  setCam(v.cam, v.vp); let worst = 1e9, who = -1; const vh = v.vp[3], NEAR = 0.1;
+  for (let b = 0; b < NB; b++) {
+    if (v.exempt && v.exempt.includes(b)) continue;
+    const P = placement(b, v), Hh = 0.15 + h[b] * HS, hw = P.w / 2; let k = 0;
+    for (const y of [0, Hh]) for (const [dx, dz] of [[-hw, -hw], [hw, -hw], [-hw, hw], [hw, hw]]) VS[k++].set(P.x + dx, y, P.z + dz).applyMatrix4(camera.matrixWorldInverse);
+    let vis = false, top = 1e9;
+    const use = (p) => { PT.copy(p).applyMatrix4(camera.projectionMatrix); const px = (1 - PT.y) / 2 * vh;
+      if (Math.abs(PT.x) <= 1 && PT.y <= 1 && PT.y >= -1) vis = true; if (Math.abs(PT.x) <= 1.02) top = Math.min(top, px); };
+    for (const [p, q] of EDG) {
+      const A = VS[p], Bq = VS[q], ia = A.z < -NEAR, ib = Bq.z < -NEAR;
+      if (ia) use(A); if (ib) use(Bq);
+      if (ia !== ib) { const f = (-NEAR - A.z) / (Bq.z - A.z); use(new THREE.Vector3().lerpVectors(A, Bq, f)); }
+    }
+    if (!vis) continue;
+    if (top < worst) { worst = top; who = b; }
+  }
+  return [worst, who];
+}
+
+// 楼高比例：二分求「整段里所有楼顶都离上缘 ≥ 70 px」的最大值（raw 模式不管第 0 栋，它就是要冲出去的那栋）
+const EX = MODE === 'raw' ? [0] : null;
+const ok = HS => { for (let i = 0; i < D.frames; i += 2) { const v = { cam: camAt(i), vp: [0, 0, W, H], exempt: EX }; if (topCheck(v, i, HS, HS_[i])[0] < TOPPX) return false; } return true; };
+let lo = 0.2, hi = 14; if (!ok(hi)) for (let k = 0; k < 20; k++) { const m = (lo + hi) / 2; if (ok(m)) lo = m; else hi = m; } else lo = hi;
+const HSCALE = +(Q.get('hs') || lo); window.HSCALE = HSCALE;
+function draw(i) {
+  i = Math.max(0, Math.min(D.frames - 1, i)); const h = HS_[i], hp = i > 0 ? HS_[i - 1] : h;
+  for (let b = 0; b < NB; b++) {
+    const P = placement(b), Hh = 0.15 + h[b] * HSCALE, on = Math.max(0, h[b] - hp[b]);
+    for (const q of [B[b].main, B[b].refl]) {
+      q.g.position.set(P.x, 0, P.z); q.m.scale.set(P.w, Hh, P.w); q.e.scale.set(P.w, Hh, P.w); q.cap.position.y = Hh; q.cap.scale.set(P.w * 1.02, 1, P.w * 1.02);
+      q.m.material.uniforms.uH.value = Hh; q.m.material.uniforms.uLvl.value = Math.min(1, h[b]); q.m.material.uniforms.uGlow.value = 1.1;
+      const c = Math.min(1, 0.35 + 1.6 * on); q.cap.material.color.copy(B[b].main.col).lerp(new THREE.Color(1, 1, 1), 0.15 + 0.35 * c).multiplyScalar(0.35 + 0.65 * c);
+    }
+  }
+  const vp = [0, 0, W, H]; setCam(camAt(i), vp); renderer.setViewport(...vp); renderer.setScissor(...vp); renderer.setClearColor(0x04060f, 1); renderer.clear(); renderer.render(scene, camera);
+  const [m, who] = topCheck({ cam: camAt(i), vp, exempt: EX }, i, HSCALE, h); return { frame: i, mode: MODE, hs: +HSCALE.toFixed(3), top_px: Math.round(m) };
+}
+window.renderFrame = draw;
+const AU = Q.get('audio');
+if (AU) {
+  const au = new Audio(AU); document.getElementById('ui').textContent = '点一下开始播放 · mode=' + MODE;
+  addEventListener('click', () => au.paused ? au.play() : au.pause());
+  const loop = () => { draw(Math.round(au.currentTime * FPS)); requestAnimationFrame(loop); }; loop();
+} else draw(0);
+window.__ready = true;
+</script></body></html>
